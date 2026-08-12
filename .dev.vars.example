@@ -1,0 +1,9 @@
+# Copy to .dev.vars for local Cloudflare/Vite development.
+# Never commit the copied file.
+LLM_API_KEY=replace-with-your-own-key
+LLM_BASE_URL=https://api.deepseek.com
+LLM_MODEL=deepseek-v4-pro
+WORKSPACE_SYNC_MODE=disabled
+
+# SEC requests should identify your deployment and provide a contact address.
+SEC_USER_AGENT=Trader Research Desk your-email@example.com
