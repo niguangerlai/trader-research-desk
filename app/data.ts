@@ -1,5 +1,12 @@
 import type { Asset, CategoryDefinition } from "./types";
 import { CALENDAR_EVENT_TEMPLATES } from "./event-calendar.ts";
+import {
+  NEW_ASSETS_2026_09_30,
+  RESEARCH_UPDATES_2026_09_30,
+} from "./research-refresh-2026-09-30.ts";
+import PREVIOUS_REFRESH_WORKSPACE from "../outputs/trader-research-manual-refresh-2026-08-31.json" with {
+  type: "json",
+};
 
 export const CATEGORY_DEFINITIONS: CategoryDefinition[] = [
   {
@@ -36,7 +43,7 @@ export const CATEGORY_DEFINITIONS: CategoryDefinition[] = [
   },
 ];
 
-export const DEFAULT_ASSETS: Asset[] = [
+export const LEGACY_DEFAULT_ASSETS: Asset[] = [
   {
     id: "qqq",
     symbol: "QQQ",
@@ -969,4 +976,45 @@ export const DEFAULT_ASSETS: Asset[] = [
     },
     sources: ["Binance USDⓈ-M Futures ETHUSDT永续", "ETH现货ETF资金流", "链上与质押数据"],
   },
+];
+
+function researchSnapshot(
+  asset: Asset,
+): NonNullable<Asset["previousVersion"]> {
+  return {
+    updatedAt: asset.updatedAt,
+    dataFreshness: asset.dataFreshness,
+    category: asset.category,
+    conviction: asset.conviction,
+    valuationLogic: asset.valuationLogic,
+    thesis: asset.thesis,
+    catalyst: asset.catalyst,
+    keyEvents: asset.keyEvents,
+    invalidation: asset.invalidation,
+    fundamentalSignals: asset.fundamentalSignals,
+    technical: asset.technical,
+    sources: asset.sources,
+  };
+}
+
+const previousRefreshAssets =
+  PREVIOUS_REFRESH_WORKSPACE.assets as unknown as Asset[];
+const researchUpdatesBySymbol = new Map(
+  RESEARCH_UPDATES_2026_09_30.map((update) => [
+    update.symbol.toUpperCase(),
+    update,
+  ]),
+);
+
+export const DEFAULT_ASSETS: Asset[] = [
+  ...previousRefreshAssets.map((asset) => {
+    const update = researchUpdatesBySymbol.get(asset.symbol.toUpperCase());
+    if (!update) return asset;
+    return {
+      ...asset,
+      ...update,
+      previousVersion: researchSnapshot(asset),
+    };
+  }),
+  ...NEW_ASSETS_2026_09_30,
 ];

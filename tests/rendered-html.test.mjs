@@ -41,6 +41,7 @@ test("keeps the local-first research capabilities in source", async () => {
   const [
     page,
     data,
+    researchRefresh,
     chartView,
     marketChart,
     pricingOrder,
@@ -58,6 +59,7 @@ test("keeps the local-first research capabilities in source", async () => {
     eventCalendar,
     decisionLog,
     portfolioRisk,
+    weeklyScreen,
     schema,
     wranglerExample,
     styles,
@@ -66,6 +68,10 @@ test("keeps the local-first research capabilities in source", async () => {
   ] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/data.ts", import.meta.url), "utf8"),
+    readFile(
+      new URL("../app/research-refresh-2026-09-30.ts", import.meta.url),
+      "utf8",
+    ),
     readFile(
       new URL("../app/components/ChartResearchView.tsx", import.meta.url),
       "utf8",
@@ -92,6 +98,7 @@ test("keeps the local-first research capabilities in source", async () => {
     readFile(new URL("../app/event-calendar.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/decision-log.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/portfolio-risk.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/weekly-screen.ts", import.meta.url), "utf8"),
     readFile(new URL("../db/schema.ts", import.meta.url), "utf8"),
     readFile(new URL("../wrangler.example.jsonc", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -112,6 +119,7 @@ test("keeps the local-first research capabilities in source", async () => {
   assert.match(page, /保存为最新版/);
   assert.match(page, /CROSS_ASSET_MIGRATION_KEY/);
   assert.match(page, /EVENT_RADAR_MIGRATION_KEY/);
+  assert.match(page, /manual-refresh-2026-09-30/);
   assert.match(page, /mergeMissingDefaultEvents/);
   assert.match(page, /synchronizeWorkspace/);
   assert.match(page, /登录同步/);
@@ -133,6 +141,12 @@ test("keeps the local-first research capabilities in source", async () => {
   assert.match(portfolioRisk, /buildPortfolioRisk/);
   assert.match(portfolioRisk, /AI 资本开支链/);
   assert.match(styles, /\.portfolio-risk/);
+  assert.match(page, /连续2周阳线/);
+  assert.match(page, /排除本周未收盘K线/);
+  assert.match(page, /refreshWeeklyScreen/);
+  assert.match(weeklyScreen, /evaluateTwoCompletedBullishWeeks/);
+  assert.match(weeklyScreen, /isUsListedMarket/);
+  assert.match(styles, /\.weekly-screen-status/);
   assert.match(page, /name="keyEvents"/);
   assert.match(eventRadar, /buildEventRadar/);
   assert.match(eventRadar, /reviewLookbackDays/);
@@ -217,6 +231,10 @@ test("keeps the local-first research capabilities in source", async () => {
   assert.match(data, /symbol: "CL=F"/);
   assert.match(data, /symbol: "BTC-USD"/);
   assert.match(data, /symbol: "ETH-USD"/);
+  assert.match(researchRefresh, /RESEARCH_UPDATES_2026_09_30/);
+  assert.match(researchRefresh, /symbol: "BE"/);
+  assert.match(researchRefresh, /symbol: "INTC"/);
+  assert.match(researchRefresh, /symbol: "TEM"/);
   assert.match(styles, /overflow-x: clip/);
   assert.match(styles, /prefers-reduced-motion: reduce/);
   assert.match(styles, /\.forecast-workspace/);

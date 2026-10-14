@@ -47,10 +47,16 @@ import {
   type CloudWorkspace,
   type WorkspacePayload,
 } from "./workspace-sync";
+import {
+  evaluateTwoCompletedBullishWeeks,
+  isUsListedMarket,
+  type TwoWeekBullishResult,
+} from "./weekly-screen";
 import type {
   Asset,
   AssetStatus,
   DecisionOutcome,
+  MarketBar,
   Regime,
   ResearchComparison,
   ResearchEvent,
@@ -67,6 +73,8 @@ const CROSS_ASSET_MIGRATION_KEY =
   "trader-research-desk:migration:cross-assets-2026-07";
 const EVENT_RADAR_MIGRATION_KEY =
   "trader-research-desk:migration:event-radar-2026-08";
+const MANUAL_REFRESH_MIGRATION_KEY =
+  "trader-research-desk:migration:manual-refresh-2026-09-30";
 const CROSS_ASSET_IDS = new Set([
   "gold-futures",
   "silver-futures",
@@ -75,7 +83,7 @@ const CROSS_ASSET_IDS = new Set([
   "eth-perpetual",
 ]);
 
-type FilterKey = "all" | AssetStatus | Regime;
+type FilterKey = "all" | AssetStatus | Regime | "two-week-bullish";
 type ViewKey =
   | "thesis"
   | "compare"
@@ -138,6 +146,25 @@ type WorkspaceApiResponse = {
   workspace?: CloudWorkspace;
   error?: string;
 };
+type WeeklyScreenEntry = TwoWeekBullishResult & {
+  symbol: string;
+  source: string;
+  fetchedAt: string;
+  error?: string;
+};
+type WeeklyScreenState = {
+  status: "idle" | "loading" | "ready";
+  entries: Record<string, WeeklyScreenEntry>;
+  completed: number;
+  total: number;
+  scannedAt: string;
+};
+type MarketApiResponse = {
+  bars?: MarketBar[];
+  source?: string;
+  fetchedAt?: string;
+  error?: string;
+};
 
 const SEC_STATUS_LABEL: Record<
   NonNullable<ResearchApiResponse["evidence"]>["filingStatus"] &
@@ -162,6 +189,7 @@ const FILTERS: { id: FilterKey; label: string }[] = [
   { id: "all", label: "全部" },
   { id: "holding", label: "持仓" },
   { id: "watching", label: "观察" },
+  { id: "two-week-bullish", label: "连续2周阳线" },
   { id: "type1", label: "第一类" },
   { id: "type2", label: "第二类" },
   { id: "type3", label: "第三类" },
@@ -391,6 +419,37 @@ function mergeMissingDefaultEvents(
   );
 }
 
+function mergeManualRefreshAssets(currentAssets: Asset[]) {
+  const refreshSymbols = new Set(
+    DEFAULT_ASSETS.map((asset) => asset.symbol.toUpperCase()),
+  );
+  const currentBySymbol = new Map(
+    currentAssets.map((asset) => [asset.symbol.toUpperCase(), asset]),
+  );
+
+  const refreshed = DEFAULT_ASSETS.map((defaultAsset) => {
+    const current = currentBySymbol.get(defaultAsset.symbol.toUpperCase());
+    if (!current) return defaultAsset;
+    return {
+      ...defaultAsset,
+      id: current.id,
+      status: current.status,
+      positionSize: current.positionSize,
+      portfolioWeight: current.portfolioWeight,
+      riskTheme: current.riskTheme,
+      averageCost: current.averageCost,
+      previousVersion: snapshotAsset(current),
+    };
+  });
+
+  return [
+    ...refreshed,
+    ...currentAssets.filter(
+      (asset) => !refreshSymbols.has(asset.symbol.toUpperCase()),
+    ),
+  ];
+}
+
 function blankAsset(): Asset {
   return {
     id: "new",
@@ -478,12 +537,20 @@ export default function Home() {
   const [syncStatus, setSyncStatus] = useState<SyncStatus>("checking");
   const [syncDisplayName, setSyncDisplayName] = useState("");
   const [syncMessage, setSyncMessage] = useState("正在检查云同步…");
+  const [weeklyScreen, setWeeklyScreen] = useState<WeeklyScreenState>({
+    status: "idle",
+    entries: {},
+    completed: 0,
+    total: 0,
+    scannedAt: "",
+  });
 
   const commandDialogRef = useRef<HTMLDialogElement>(null);
   const assetDialogRef = useRef<HTMLDialogElement>(null);
   const importRef = useRef<HTMLInputElement>(null);
   const undoTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const syncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const weeklyScreenAbortRef = useRef<AbortController | null>(null);
   const cloudRevisionRef = useRef(0);
   const lastSyncedPayloadRef = useRef("");
   const assetsRef = useRef(assets);
@@ -535,7 +602,7 @@ export default function Home() {
             const hasEventRadarMigration = window.localStorage.getItem(
               EVENT_RADAR_MIGRATION_KEY,
             );
-            const restored = hasEventRadarMigration
+            const restoredWithEvents = hasEventRadarMigration
               ? restoredWithCrossAssets
               : restoredWithCrossAssets.map((asset) => {
                   const defaultAsset = DEFAULT_ASSETS.find(
@@ -551,14 +618,22 @@ export default function Home() {
                       }
                     : asset;
                 });
+            const hasManualRefresh = window.localStorage.getItem(
+              MANUAL_REFRESH_MIGRATION_KEY,
+            );
+            const restored = hasManualRefresh
+              ? restoredWithEvents
+              : mergeManualRefreshAssets(restoredWithEvents);
             window.localStorage.setItem(CROSS_ASSET_MIGRATION_KEY, "done");
             window.localStorage.setItem(EVENT_RADAR_MIGRATION_KEY, "done");
+            window.localStorage.setItem(MANUAL_REFRESH_MIGRATION_KEY, "done");
             setAssets(restored);
             setSelectedId(restored[0]?.id ?? "");
           }
         } else {
           window.localStorage.setItem(CROSS_ASSET_MIGRATION_KEY, "done");
           window.localStorage.setItem(EVENT_RADAR_MIGRATION_KEY, "done");
+          window.localStorage.setItem(MANUAL_REFRESH_MIGRATION_KEY, "done");
         }
       } catch {
         setImportError("本地数据读取失败，已载入默认研究框架。");
@@ -625,6 +700,7 @@ export default function Home() {
     () => () => {
       if (undoTimerRef.current) clearTimeout(undoTimerRef.current);
       if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+      weeklyScreenAbortRef.current?.abort();
     },
     [],
   );
@@ -640,13 +716,110 @@ export default function Home() {
     () =>
       assets.filter((asset) => {
         if (filter === "all") return true;
+        if (filter === "two-week-bullish") {
+          return Boolean(
+            isUsListedMarket(asset.market) &&
+              weeklyScreen.entries[asset.symbol.toUpperCase()]?.matched,
+          );
+        }
         if (["holding", "watching", "avoid"].includes(filter)) {
           return asset.status === filter;
         }
         return asset.category === filter;
       }),
-    [assets, filter],
+    [assets, filter, weeklyScreen.entries],
   );
+
+  const weeklyScreenErrorCount = useMemo(
+    () =>
+      Object.values(weeklyScreen.entries).filter((entry) => entry.error)
+        .length,
+    [weeklyScreen.entries],
+  );
+
+  async function refreshWeeklyScreen() {
+    weeklyScreenAbortRef.current?.abort();
+    const controller = new AbortController();
+    weeklyScreenAbortRef.current = controller;
+    const targets = assets.filter((asset) => isUsListedMarket(asset.market));
+
+    setWeeklyScreen({
+      status: targets.length ? "loading" : "ready",
+      entries: {},
+      completed: 0,
+      total: targets.length,
+      scannedAt: targets.length ? "" : new Date().toISOString(),
+    });
+    if (!targets.length) return;
+
+    let nextIndex = 0;
+    const worker = async () => {
+      while (!controller.signal.aborted) {
+        const asset = targets[nextIndex];
+        nextIndex += 1;
+        if (!asset) return;
+
+        const symbol = asset.symbol.toUpperCase();
+        let entry: WeeklyScreenEntry;
+        const requestController = new AbortController();
+        const abortFromScan = () => requestController.abort();
+        const timeoutId = window.setTimeout(
+          () => requestController.abort(),
+          12_000,
+        );
+        controller.signal.addEventListener("abort", abortFromScan, {
+          once: true,
+        });
+        try {
+          const response = await fetch(
+            `/api/market?symbol=${encodeURIComponent(symbol)}&timeframe=1D`,
+            { signal: requestController.signal },
+          );
+          const payload = (await response.json()) as MarketApiResponse;
+          if (!response.ok || !payload.bars?.length) {
+            throw new Error(payload.error || "行情暂不可用");
+          }
+          entry = {
+            symbol,
+            ...evaluateTwoCompletedBullishWeeks(payload.bars),
+            source: payload.source || "公开行情源",
+            fetchedAt: payload.fetchedAt || new Date().toISOString(),
+          };
+        } catch (error) {
+          if (controller.signal.aborted) return;
+          entry = {
+            symbol,
+            matched: false,
+            reason: "insufficient_data",
+            weeks: [],
+            source: "",
+            fetchedAt: new Date().toISOString(),
+            error: error instanceof Error ? error.message : "行情暂不可用",
+          };
+        } finally {
+          window.clearTimeout(timeoutId);
+          controller.signal.removeEventListener("abort", abortFromScan);
+        }
+
+        setWeeklyScreen((current) => ({
+          ...current,
+          completed: current.completed + 1,
+          entries: { ...current.entries, [symbol]: entry },
+        }));
+      }
+    };
+
+    await Promise.all(
+      Array.from({ length: Math.min(4, targets.length) }, () => worker()),
+    );
+    if (!controller.signal.aborted) {
+      setWeeklyScreen((current) => ({
+        ...current,
+        status: "ready",
+        scannedAt: new Date().toISOString(),
+      }));
+    }
+  }
 
   const commandResults = useMemo(() => {
     const query = commandQuery.trim().toLowerCase();
@@ -1373,12 +1546,54 @@ export default function Home() {
                   className="filter-chip"
                   data-active={filter === item.id}
                   aria-pressed={filter === item.id}
-                  onClick={() => setFilter(item.id)}
+                  onClick={() => {
+                    setFilter(item.id);
+                    if (item.id === "two-week-bullish") {
+                      void refreshWeeklyScreen();
+                    }
+                  }}
                 >
                   {item.label}
                 </button>
               ))}
             </div>
+
+            {filter === "two-week-bullish" && (
+              <div
+                className="weekly-screen-status"
+                data-state={weeklyScreen.status}
+                aria-live="polite"
+              >
+                <div>
+                  <strong>
+                    {weeklyScreen.status === "loading"
+                      ? `扫描中 ${weeklyScreen.completed}/${weeklyScreen.total}`
+                      : `${filteredAssets.length} 个命中`}
+                  </strong>
+                  <span>仅扫描自选中的美股，并排除本周未收盘K线</span>
+                  {weeklyScreen.status === "ready" && weeklyScreen.scannedAt && (
+                    <small>
+                      {new Date(weeklyScreen.scannedAt).toLocaleString("zh-CN", {
+                        month: "2-digit",
+                        day: "2-digit",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
+                      {weeklyScreenErrorCount
+                        ? ` · ${weeklyScreenErrorCount} 个行情读取失败`
+                        : " · 行情读取完成"}
+                    </small>
+                  )}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => void refreshWeeklyScreen()}
+                  disabled={weeklyScreen.status === "loading"}
+                >
+                  {weeklyScreen.status === "loading" ? "扫描中" : "重新扫描"}
+                </button>
+              </div>
+            )}
 
             <nav className="symbol-list" aria-label="标的列表">
               {filteredAssets.map((asset) => (
@@ -1392,17 +1607,49 @@ export default function Home() {
                     <strong>{asset.symbol}</strong>
                     <small>{asset.name}</small>
                   </span>
-                  <span className={`category-dot ${asset.category}`}>
-                    {
-                      CATEGORY_DEFINITIONS.find(
-                        (item) => item.id === asset.category,
-                      )?.short
-                    }
+                  <span className="symbol-row-meta">
+                    {filter === "two-week-bullish" &&
+                      weeklyScreen.entries[
+                        asset.symbol.toUpperCase()
+                      ]?.weeks.length === 2 && (
+                        <span
+                          className="weekly-streak-badge"
+                          title={weeklyScreen.entries[
+                            asset.symbol.toUpperCase()
+                          ].weeks
+                            .map(
+                              (week) =>
+                                `${week.weekStart} 周 ${formatSignedPercent(week.changePercent)}`,
+                            )
+                            .join("；")}
+                        >
+                          {weeklyScreen.entries[
+                            asset.symbol.toUpperCase()
+                          ].weeks
+                            .map((week) =>
+                              formatSignedPercent(week.changePercent),
+                            )
+                            .join(" · ")}
+                        </span>
+                      )}
+                    <span className={`category-dot ${asset.category}`}>
+                      {
+                        CATEGORY_DEFINITIONS.find(
+                          (item) => item.id === asset.category,
+                        )?.short
+                      }
+                    </span>
                   </span>
                 </button>
               ))}
               {filteredAssets.length === 0 && (
-                <p className="list-empty">这个筛选下还没有标的。</p>
+                <p className="list-empty">
+                  {filter === "two-week-bullish"
+                    ? weeklyScreen.status === "loading"
+                      ? "正在核对最近两个已收盘周线…"
+                      : "当前自选美股中没有满足连续两周阳线的标的。"
+                    : "这个筛选下还没有标的。"}
+                </p>
               )}
             </nav>
 
@@ -1605,6 +1852,14 @@ export default function Home() {
 
 function formatWeight(value: number) {
   return `${value.toLocaleString("zh-CN", { maximumFractionDigits: 2 })}%`;
+}
+
+function formatSignedPercent(value: number) {
+  const sign = value > 0 ? "+" : "";
+  return `${sign}${value.toLocaleString("zh-CN", {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  })}%`;
 }
 
 function PortfolioRiskPanel({

@@ -1,0 +1,3439 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "qqq",
+      "symbol": "QQQ",
+      "name": "Invesco QQQ",
+      "market": "NASDAQ",
+      "sector": "指数 / 大型科技",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "high",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "宏观披露截至2026-08-28；免费日线截至2026-08-28（Yahoo Finance，可能延迟）；人工研究更新于2026-08-31。",
+      "valuationLogic": "QQQ仍按成分股盈利修正、10年实际利率、AI资本开支回报和市场宽度定价。实际利率2.42%意味着久期估值仍受约束；指数只略低于20日线、仍高于50日和200日线，属于高位震荡而非熊市确认。",
+      "thesis": "当前是基本面尚未崩、估值与利率约束并存的第二类。财报强度不足以单独推高指数，下一步要看9月FOMC、盈利预期和指数能否重新站稳20日线。",
+      "catalyst": [
+        "9月15–16日FOMC释放更低实际利率路径",
+        "大型科技盈利上修覆盖折旧和融资成本",
+        "QQQ站稳718附近20日线并突破749前高"
+      ],
+      "invalidation": [
+        "跌破712附近50日线后放量失守",
+        "10年实际利率继续上行并伴随估值压缩",
+        "大型科技盈利与自由现金流预期连续下修"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "qqq-manual-1",
+          "label": "价格结构",
+          "state": "warning",
+          "note": "收盘716.43，略低于20日线717.94，但仍高于50日线712.06和200日线655.17。"
+        },
+        {
+          "id": "qqq-manual-2",
+          "label": "实际利率",
+          "state": "warning",
+          "note": "美国10年TIPS实际收益率8月28日为2.42%，仍是成长估值的高门槛。"
+        },
+        {
+          "id": "qqq-manual-3",
+          "label": "宏观事件",
+          "state": "neutral",
+          "note": "9月15–16日FOMC含经济预测，是下一次主要重定价窗口。"
+        },
+        {
+          "id": "qqq-manual-4",
+          "label": "回撤幅度",
+          "state": "positive",
+          "note": "距52周高点仅4.3%，尚未出现中长期趋势破坏。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 716.43，跌破20日线、站上50日线、站上200日线。",
+        "momentum": "近30日 +4.8%，近90日 -1.8%；RSI14 46.7，距52周高点 -4.3%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "716.43",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "717.94",
+            "role": "resistance"
+          },
+          {
+            "label": "50日线",
+            "value": "712.06",
+            "role": "support"
+          },
+          {
+            "label": "200日线",
+            "value": "655.17",
+            "role": "support"
+          }
+        ],
+        "action": "不在20日线下追涨；站稳718并扩散至更多成分股再提高风险，跌破712且实际利率上行则先降暴露。"
+      },
+      "sources": [
+        "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_real_yield_curve",
+        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "https://finance.yahoo.com/quote/QQQ/history/"
+      ],
+      "keyEvents": [
+        {
+          "id": "qqq-fomc-2026-09",
+          "date": "2026-09-16",
+          "title": "FOMC利率决议与经济预测",
+          "kind": "macro",
+          "impact": "high",
+          "status": "scheduled",
+          "preparation": "记录10年实际利率、美元、QQQ相对200日线和市场宽度的同向变化。",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "previousVersion": {
+        "updatedAt": "2026-07-22",
+        "dataFreshness": "日线数据截至 2026-07-22 收盘",
+        "category": "type2",
+        "conviction": "high",
+        "valuationLogic": "QQQ的定价取决于成分股盈利增速、长端利率、风险溢价和市场宽度。当前盈利并未整体崩塌，但市场开始要求AI资本开支证明自由现金流回报。",
+        "thesis": "长期趋势仍在200日线上方，短线跌破20日与50日均线。当前更像长期上升趋势中的中级别调整，而不是已经确认的熊市。",
+        "catalyst": [
+          "大型科技财报继续上修盈利预期",
+          "指数重新站上20日与50日均线",
+          "半导体与软件的市场宽度同步修复"
+        ],
+        "keyEvents": [
+          {
+            "id": "qqq-us-cpi-2026-08-12",
+            "date": "2026-08-12",
+            "title": "美国 7 月 CPI",
+            "kind": "macro",
+            "impact": "high",
+            "status": "scheduled",
+            "preparation": "事件前记录核心通胀预期、2年/10年美债收益率和关键位；事件后只判断预期差与价格是否同向。",
+            "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+          },
+          {
+            "id": "qqq-us-ppi-2026-08-13",
+            "date": "2026-08-13",
+            "title": "美国 7 月 PPI",
+            "kind": "macro",
+            "impact": "high",
+            "status": "scheduled",
+            "preparation": "事件前记录市场通胀路径；事件后观察长端利率与高估值资产是否形成一致反馈。",
+            "source": "https://www.bls.gov/schedule/news_release/ppi.htm"
+          },
+          {
+            "id": "qqq-jackson-hole-2026-08-27",
+            "date": "2026-08-27",
+            "title": "Jackson Hole 经济政策研讨会",
+            "kind": "macro",
+            "impact": "high",
+            "status": "scheduled",
+            "preparation": "会前记录利率路径与期限溢价预期；会后优先看美债收益率、美元和相对强度，不凭讲话标题直接交易。",
+            "source": "https://www.kansascityfed.org/research/jackson-hole-economic-symposium/"
+          },
+          {
+            "id": "qqq-fomc-2026-09-16",
+            "date": "2026-09-16",
+            "title": "FOMC 利率决议与经济预测",
+            "kind": "macro",
+            "impact": "high",
+            "status": "scheduled",
+            "preparation": "会前记录降息路径、点阵图与期限溢价预期；会后判断收益率、美元和风险资产是否给出同向确认。",
+            "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+          }
+        ],
+        "invalidation": [
+          "放量跌破686.76并无法快速收回",
+          "100日线670附近失守",
+          "盈利预期开始连续下修"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "qqq-earnings",
+            "label": "盈利预期",
+            "state": "positive",
+            "note": "大型科技需求仍强，尚未出现指数级盈利塌陷。"
+          },
+          {
+            "id": "qqq-valuation",
+            "label": "估值压力",
+            "state": "warning",
+            "note": "AI资本开支转向ROIC与自由现金流审查。"
+          },
+          {
+            "id": "qqq-price",
+            "label": "价格确认",
+            "state": "negative",
+            "note": "收于705.35，低于20日线714.25和50日线719.17。"
+          }
+        ],
+        "technical": {
+          "trend": "长期上升，中期调整，短线弱反弹",
+          "momentum": "RSI(14)约46.7，未进入极端超卖",
+          "structure": "6月初748.65附近见高后形成降低的高点；7月17日下探686.76后反弹，但反弹成交量不足。",
+          "levels": [
+            {
+              "label": "第一阻力",
+              "value": "714–719",
+              "role": "resistance"
+            },
+            {
+              "label": "确认区",
+              "value": "719–725",
+              "role": "resistance"
+            },
+            {
+              "label": "核心支撑",
+              "value": "695–686.76",
+              "role": "support"
+            },
+            {
+              "label": "100日线",
+              "value": "670.04",
+              "role": "support"
+            },
+            {
+              "label": "200日线",
+              "value": "642.35",
+              "role": "pivot"
+            }
+          ],
+          "action": "站回719并保持，才算修复；放量跌破686.76，先看670。区间中部不适合追逐短期期权。"
+        },
+        "sources": [
+          "Nasdaq QQQ历史行情",
+          "本对话技术推演"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-28",
+        "changeSummary": [
+          "未变：仍归为第二类，盈利尚未崩但估值要求提高。",
+          "新增：10年实际利率截至8月28日为2.42%，利率约束被量化。",
+          "强化：指数守住50日和200日线，当前更像高位整理而非趋势反转。",
+          "新增：9月15–16日FOMC成为明确验证日期。"
+        ],
+        "drivers": [
+          "QQQ收盘与20/50/200日线的相对位置",
+          "美国财政部实际收益率曲线",
+          "美联储2026年FOMC日历"
+        ],
+        "verdicts": [
+          {
+            "claim": "长期上升趋势尚未破坏",
+            "verdict": "confirmed",
+            "explanation": "指数仍在50日和200日线上方，旧版关于非熊市确认的判断成立。"
+          },
+          {
+            "claim": "短线需要重新站上20日线",
+            "verdict": "open",
+            "explanation": "8月28日仍略低于20日线，尚未完成。"
+          },
+          {
+            "claim": "盈利预期不会连续下修",
+            "verdict": "open",
+            "explanation": "需等待下一轮大型科技财报与一致预期变化。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "9",
+            "publisher": "月",
+            "publishedAt": "F",
+            "url": "O"
+          },
+          {
+            "title": "F",
+            "publisher": "e",
+            "publishedAt": "d",
+            "url": "e"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "googl",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "market": "NASDAQ",
+      "sector": "云计算 / 广告 / AI",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "high",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "Q2 2026财报截至2026-07-22；免费日线截至2026-08-28；人工研究更新于2026-08-31。",
+      "valuationLogic": "Alphabet的核心仍是Search现金流、Cloud增速/利润率与约1800亿美元年度资本开支的回报。Q2收入1198亿美元、Cloud增长82%验证需求，但巨额权益投资未实现收益和资本开支不能当作可持续经营利润。",
+      "thesis": "基本面强于股价：Search增长17%、Cloud增长82%，但价格跌破20/50日线且季度回撤10.9%。这是典型第二类——AI需求被验证，市场仍要求自由现金流和资本效率证明。",
+      "catalyst": [
+        "Cloud收入高增同时利润率和现金转换改善",
+        "Search增长保持两位数且AI功能不侵蚀广告货币化",
+        "股价收复350附近20/50日线并形成更高低点"
+      ],
+      "invalidation": [
+        "Cloud增速与利润率同时转弱",
+        "Search份额或商业化增速持续下降",
+        "资本开支继续上修而自由现金流无拐点"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "googl-manual-1",
+          "label": "收入质量",
+          "state": "positive",
+          "note": "Q2收入1198亿美元增24%，Search增17%，Cloud增82%。"
+        },
+        {
+          "id": "googl-manual-2",
+          "label": "利润率",
+          "state": "positive",
+          "note": "合并经营利润增30%，经营利润率扩张至34%。"
+        },
+        {
+          "id": "googl-manual-3",
+          "label": "资本开支回报",
+          "state": "warning",
+          "note": "2026年计划资本开支约1800亿美元，现金回报仍需后续季度验证。"
+        },
+        {
+          "id": "googl-manual-4",
+          "label": "价格确认",
+          "state": "warning",
+          "note": "346.59低于20日线350.27和50日线349.78，但高于200日线334.57。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 346.59，跌破20日线、跌破50日线、站上200日线。",
+        "momentum": "近30日 +3.9%，近90日 -10.9%；RSI14 37.8，距52周高点 -15.2%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "346.59",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "350.27",
+            "role": "resistance"
+          },
+          {
+            "label": "50日线",
+            "value": "349.78",
+            "role": "resistance"
+          },
+          {
+            "label": "200日线",
+            "value": "334.57",
+            "role": "support"
+          }
+        ],
+        "action": "先看350能否由阻力转为支撑；跌破335附近200日线且Cloud/Search预期下修，才把第二类升级为第三类。"
+      },
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+        "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000344/goog014907-ars.pdf",
+        "https://finance.yahoo.com/quote/GOOGL/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-22",
+        "dataFreshness": "Q2 2026财报与电话会",
+        "category": "type2",
+        "conviction": "high",
+        "valuationLogic": "核心定价是Search现金牛能否继续增长、Cloud增速与利润率，以及巨额AI资本开支最终能否转化为自由现金流。单看收入增长不足以决定估值。",
+        "thesis": "需求和商业化强，但自由现金流转负、资本开支继续上修。股票面临的不是AI需求消失，而是市场提高了对投资回报率的要求。",
+        "catalyst": [
+          "Cloud积压订单转化为收入与现金流",
+          "AI搜索提高查询量且不侵蚀广告货币化",
+          "资本开支增速放缓而收入仍保持高增"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "Search增速与份额同时恶化",
+          "Cloud增速降温且利润率回落",
+          "折旧与能源成本持续压制经营利润"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "googl-cloud",
+            "label": "Cloud需求",
+            "state": "positive",
+            "note": "收入同比增长82%至247.7亿美元，积压订单5140亿美元。"
+          },
+          {
+            "id": "googl-search",
+            "label": "Search",
+            "state": "positive",
+            "note": "Search与其他收入增长17%，AI功能暂未摧毁核心广告引擎。"
+          },
+          {
+            "id": "googl-fcf",
+            "label": "自由现金流",
+            "state": "negative",
+            "note": "经营现金流390.7亿美元，资本开支449.2亿美元，季度FCF约为负58.6亿美元。"
+          },
+          {
+            "id": "googl-capex",
+            "label": "资本开支",
+            "state": "warning",
+            "note": "全年指引升至1950亿–2050亿美元，2027年预计继续显著增长。"
+          }
+        ],
+        "technical": {
+          "trend": "财报后进入好基本面、弱价格反应的第二类",
+          "momentum": "盘后下跌反映市场先交易现金流与资本回报压力",
+          "structure": "后续需要观察正式交易日能否收复财报缺口，以及相对QQQ是否重新转强。",
+          "levels": [
+            {
+              "label": "事件锚点",
+              "value": "7/22收盘",
+              "role": "pivot"
+            },
+            {
+              "label": "确认方式",
+              "value": "收复财报缺口",
+              "role": "resistance"
+            },
+            {
+              "label": "失效方式",
+              "value": "反弹缩量且再破低",
+              "role": "support"
+            }
+          ],
+          "action": "不能用Cloud高增直接追Call；等待坏消息跌不动或重新收复缺口，才是价格确认。"
+        },
+        "sources": [
+          "Alphabet Q2 2026财报",
+          "Alphabet Q2 2026电话会"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-28",
+        "changeSummary": [
+          "强化：Search和Cloud需求均由Q2财报验证。",
+          "新增：Cloud同比82%，需求强度高于上一版。",
+          "强化：约1800亿美元资本开支使自由现金流回报仍是估值核心。",
+          "未变：价格弱于基本面，继续归为第二类。"
+        ],
+        "drivers": [
+          "Alphabet Q2 2026 SEC原始财报",
+          "2026年度资本开支计划",
+          "股价跌破20/50日线但仍守200日线"
+        ],
+        "verdicts": [
+          {
+            "claim": "AI需求没有消失",
+            "verdict": "confirmed",
+            "explanation": "Cloud收入同比增长82%，旧版判断成立。"
+          },
+          {
+            "claim": "资本开支需要证明回报",
+            "verdict": "confirmed",
+            "explanation": "公司仍计划约1800亿美元年度资本开支，市场继续交易现金回报。"
+          },
+          {
+            "claim": "自由现金流将快速修复",
+            "verdict": "open",
+            "explanation": "现有财报尚不足以确认持续拐点。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "A",
+            "publisher": "l",
+            "publishedAt": "p",
+            "url": "h"
+          },
+          {
+            "title": "A",
+            "publisher": "l",
+            "publishedAt": "p",
+            "url": "h"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mu",
+      "symbol": "MU",
+      "name": "Micron",
+      "market": "NASDAQ",
+      "sector": "HBM / DRAM / NAND",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "high",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "Micron FQ3/FQ4指引截至2026-06-24；免费日线截至2026-08-28；人工研究更新于2026-08-31。",
+      "valuationLogic": "MU按HBM份额、DRAM/NAND价格、毛利率和客户长协的持续性定价。FQ3收入414.6亿美元、毛利率84.6%，FQ4收入指引500亿美元且毛利率约86%，基本面仍强；估值风险在于市场是否把异常高利润当周期顶点。",
+      "thesis": "不是基本面转坏，而是顶峰利润可持续性被打折。股价回到20日线上但仍低于50日线、距高点25.7%，当前是第二类中的反弹验证期。",
+      "catalyst": [
+        "9月30日财报达到或超过500亿美元收入与86%毛利率指引",
+        "HBM4量产与HBM4E 2027爬坡按计划",
+        "股价收复955附近50日线且DRAM合约价继续上行"
+      ],
+      "invalidation": [
+        "FQ4或下一季毛利率指引见顶回落",
+        "HBM客户认证、份额或长协能见度弱化",
+        "跌回921下方并在强财报后无法收复"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "mu-manual-1",
+          "label": "财务",
+          "state": "positive",
+          "note": "FQ3收入414.6亿美元，GAAP毛利率84.6%，调整后自由现金流183亿美元。"
+        },
+        {
+          "id": "mu-manual-2",
+          "label": "指引",
+          "state": "positive",
+          "note": "FQ4收入指引500±10亿美元，毛利率约86%，显著强于旧版信息。"
+        },
+        {
+          "id": "mu-manual-3",
+          "label": "产品",
+          "state": "positive",
+          "note": "HBM4已向主要客户高量出货，HBM4E预计2027年量产。"
+        },
+        {
+          "id": "mu-manual-4",
+          "label": "价格",
+          "state": "warning",
+          "note": "932.86高于20日线但低于50日线955，仍较52周高点低25.7%。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 932.86，站上20日线、跌破50日线、站上200日线。",
+        "momentum": "近30日 +6.7%，近90日 +0.5%；RSI14 60.0，距52周高点 -25.7%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "932.86",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "920.87",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "955.00",
+            "role": "resistance"
+          },
+          {
+            "label": "200日线",
+            "value": "588.42",
+            "role": "support"
+          }
+        ],
+        "action": "财报前不把单月反弹当完整趋势；收复955并由下一季指引确认再加权，强财报却跌破921要按拥挤出清处理。"
+      },
+      "sources": [
+        "https://micron.gcs-web.com/news-releases/news-release-details/micron-technology-inc-reports-record-results-third-quarter",
+        "https://finance.yahoo.com/quote/MU/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [
+        {
+          "id": "mu-fq4-2026",
+          "date": "2026-09-30",
+          "title": "Micron FQ4 2026财报",
+          "kind": "earnings",
+          "impact": "high",
+          "status": "scheduled",
+          "preparation": "对照收入500±10亿美元、毛利率约86%、EPS 31±1美元，并核对下一季指引与HBM长协。",
+          "source": "https://micron.gcs-web.com/"
+        }
+      ],
+      "previousVersion": {
+        "updatedAt": "2026-07-22",
+        "dataFreshness": "逻辑框架；价格与订单需刷新",
+        "category": "type2",
+        "conviction": "high",
+        "valuationLogic": "盈利主要由HBM出货、DRAM/NAND ASP、位元成本和毛利率共同决定。市场不会只交易AI服务器数量，还交易存储价格是否接近周期峰值。",
+        "thesis": "Google资本开支上调验证AI需求，但不能直接证明存储ASP继续加速。当前属于需求尚强、估值与拥挤仓位出清。",
+        "catalyst": [
+          "HBM订单与认证继续上修",
+          "DRAM合约价继续上涨且库存保持健康",
+          "毛利率指引持续高于市场预期"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "HBM增量订单放缓",
+          "DRAM现货与合约价转跌",
+          "扩产导致2027–2028供给预期显著上升"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "mu-demand",
+            "label": "AI需求",
+            "state": "positive",
+            "note": "超大规模云厂商资本开支仍在增长。"
+          },
+          {
+            "id": "mu-asp",
+            "label": "ASP持续性",
+            "state": "warning",
+            "note": "市场开始担心价格和毛利率接近周期高点。"
+          },
+          {
+            "id": "mu-price",
+            "label": "价格反应",
+            "state": "warning",
+            "note": "利好能够带来盘后上涨，但尚不足以完成板块重定价。"
+          }
+        ],
+        "technical": {
+          "trend": "第二类出清，等待重新确认相对强度",
+          "momentum": "好消息只带来有限涨幅，说明上方供应仍重",
+          "structure": "观察正式盘能否守住盘后涨幅，并跑赢SOXX与QQQ。",
+          "levels": [
+            {
+              "label": "第一确认",
+              "value": "守住财报后涨幅",
+              "role": "pivot"
+            },
+            {
+              "label": "趋势确认",
+              "value": "收复20日/50日线",
+              "role": "resistance"
+            },
+            {
+              "label": "风险信号",
+              "value": "好消息高开低走",
+              "role": "support"
+            }
+          ],
+          "action": "先看相对强度与收盘，不依据Google总CapEx单独追涨。"
+        },
+        "sources": [
+          "Micron财报",
+          "Hyperscaler资本开支",
+          "DRAM/HBM价格与订单"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-28",
+        "changeSummary": [
+          "强化：收入、毛利率和现金流均大幅上修，基本面未转坏。",
+          "新增：FQ4收入500亿美元与86%毛利率构成明确验证基准。",
+          "新增：HBM4已进入高量出货。",
+          "未变：价格仍未完全确认，继续归为第二类。"
+        ],
+        "drivers": [
+          "Micron FQ3 2026官方业绩与FQ4指引",
+          "HBM4/HBM4E产品进度",
+          "股价位于20日与50日线之间"
+        ],
+        "verdicts": [
+          {
+            "claim": "HBM与存储需求仍强",
+            "verdict": "confirmed",
+            "explanation": "FQ3纪录收入和FQ4更高指引确认需求。"
+          },
+          {
+            "claim": "价格可能在周期峰值前钝化",
+            "verdict": "confirmed",
+            "explanation": "股价仍低于50日线且距高点25.7%。"
+          },
+          {
+            "claim": "2027供给不会破坏价格",
+            "verdict": "open",
+            "explanation": "需继续验证行业扩产与长协纪律。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "M",
+            "publisher": "i",
+            "publishedAt": "c",
+            "url": "r"
+          },
+          {
+            "title": "M",
+            "publisher": "i",
+            "publishedAt": "c",
+            "url": "r"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "skhynix",
+      "symbol": "000660",
+      "name": "SK hynix",
+      "market": "KRX",
+      "sector": "HBM / DRAM / NAND",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "high",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "SK hynix Q2 2026业绩截至2026-07-29；KRX日线截至2026-08-31；人工研究更新于2026-08-31。",
+      "valuationLogic": "海力士按HBM份额、长协、价格和资本纪律定价。Q2收入79.32万亿韩元、经营利润60.54万亿、经营利润率76%，HBM4已开始量产且约10家客户签订长期协议；高利润已兑现，股价却仍大幅低于高点。",
+      "thesis": "这是多杀多后的反弹，不是需求崩塌：月涨25.2%并站上20日线，但仍低于50日线且距高点44.6%。继续归第二类，关键是反弹能否穿过192.9万韩元50日线。",
+      "catalyst": [
+        "HBM4量产和长期协议继续转化为收入",
+        "资本开支纪律使供给增速低于结构性需求",
+        "股价站稳192.9万韩元50日线"
+      ],
+      "invalidation": [
+        "HBM份额、客户认证或合同价格转弱",
+        "扩产令2027供给明显超过需求",
+        "股价跌破159.9万韩元20日线并伴随基本面下修"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "000660-manual-1",
+          "label": "财务",
+          "state": "positive",
+          "note": "Q2收入79.32万亿韩元、经营利润60.54万亿韩元，经营利润率76%。"
+        },
+        {
+          "id": "000660-manual-2",
+          "label": "订单",
+          "state": "positive",
+          "note": "公司披露与约10家关键客户签订长期协议，需求能见度提高。"
+        },
+        {
+          "id": "000660-manual-3",
+          "label": "产品",
+          "state": "positive",
+          "note": "HBM4在Q2开始量产出货。"
+        },
+        {
+          "id": "000660-manual-4",
+          "label": "价格",
+          "state": "warning",
+          "note": "165.5万韩元站上20日线但仍低于50日线，距52周高点44.6%。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-31 收于 1,655,000，站上20日线、跌破50日线、站上200日线。",
+        "momentum": "近30日 +25.2%，近90日 -26.2%；RSI14 64.1，距52周高点 -44.6%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "1,655,000",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "1,598,700",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "1,929,120",
+            "role": "resistance"
+          },
+          {
+            "label": "200日线",
+            "value": "1,285,545",
+            "role": "support"
+          }
+        ],
+        "action": "把192.9万韩元50日线作为多杀多是否结束的验证位；基本面不下修且站稳才提高仓位，跌破159.9万则降低弹性暴露。"
+      },
+      "sources": [
+        "https://news.skhynix.com/en/q2-2026-business-results/",
+        "https://finance.yahoo.com/quote/000660.KS/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-23",
+        "dataFreshness": "逻辑框架；韩股价格需刷新",
+        "category": "type2",
+        "conviction": "high",
+        "valuationLogic": "海力士的核心定价来自HBM份额、客户认证、供货价格、先进封装能力和扩产回报。HBM领先可以支撑盈利，但高估值需要持续上修而不仅是维持高景气。",
+        "thesis": "基本面仍强，但高拥挤仓位、融资与扩产预期令价格对利好钝化。当前更像多头仓位出清，而非已经确认的需求崩塌。",
+        "catalyst": [
+          "HBM4认证与客户份额继续领先",
+          "2027产能预售和价格继续上修",
+          "韩国本地股与美股存储同步恢复相对强度"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "客户认证或份额明显丢失",
+          "HBM价格与毛利率指引转弱",
+          "扩产速度超过需求增长"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "hynix-hbm",
+            "label": "HBM领导力",
+            "state": "positive",
+            "note": "仍是AI服务器存储中最直接的受益环节之一。"
+          },
+          {
+            "id": "hynix-position",
+            "label": "仓位结构",
+            "state": "negative",
+            "note": "估值与拥挤度较高，利好容易被兑现。"
+          },
+          {
+            "id": "hynix-capacity",
+            "label": "扩产风险",
+            "state": "warning",
+            "note": "需要持续跟踪2027–2028供给增长而非只看当前售罄。"
+          }
+        ],
+        "technical": {
+          "trend": "多头出清阶段，尚未完成趋势修复",
+          "momentum": "波动放大，好消息响应减弱",
+          "structure": "若利好日无法跑赢韩国半导体指数，说明主动买盘仍弱。",
+          "levels": [
+            {
+              "label": "相对强度",
+              "value": "对KOSPI半导体转正",
+              "role": "pivot"
+            },
+            {
+              "label": "趋势确认",
+              "value": "收复关键均线",
+              "role": "resistance"
+            },
+            {
+              "label": "风险信号",
+              "value": "利好日继续破低",
+              "role": "support"
+            }
+          ],
+          "action": "把‘需求强’与‘股价见底’分开；等待价格先确认。"
+        },
+        "sources": [
+          "SK hynix财报与订单",
+          "HBM认证进度",
+          "韩国交易所价格"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-31",
+        "changeSummary": [
+          "强化：Q2收入、利润率和现金均刷新纪录。",
+          "新增：约10家客户长协和HBM4量产提高能见度。",
+          "强化：股价大跌未伴随财务恶化，多杀多解释更成立。",
+          "未变：尚未收复50日线，仍是第二类。"
+        ],
+        "drivers": [
+          "SK hynix Q2 2026官方业绩",
+          "HBM4量产与长期客户协议",
+          "股价月度反弹但仍低于50日线"
+        ],
+        "verdicts": [
+          {
+            "claim": "需求没有崩塌",
+            "verdict": "confirmed",
+            "explanation": "收入、经营利润与HBM进度均创新高。"
+          },
+          {
+            "claim": "此前下跌主要包含仓位出清",
+            "verdict": "confirmed",
+            "explanation": "基本面上修同时价格大幅低于高点，符合多杀多特征。"
+          },
+          {
+            "claim": "反弹已转为新主升",
+            "verdict": "open",
+            "explanation": "尚未收复50日线。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "S",
+            "publisher": "K",
+            "publishedAt": " ",
+            "url": "h"
+          },
+          {
+            "title": "S",
+            "publisher": "K",
+            "publishedAt": " ",
+            "url": "h"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sndk",
+      "symbol": "SNDK",
+      "name": "SanDisk",
+      "market": "NASDAQ",
+      "sector": "NAND / 企业级SSD",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "medium",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "Sandisk FY26 Q4业绩截至2026-08-05；免费日线截至2026-08-28；人工研究更新于2026-08-31。",
+      "valuationLogic": "Sandisk按NAND价格、企业级SSD份额、位元出货和毛利率定价。Q4收入89.65亿美元、毛利率84.6%，数据中心收入环比翻倍；Q1 FY27收入指引103–108亿美元，证明NAND景气仍强，但高毛利也提高周期顶峰风险。",
+      "thesis": "基本面强、价格仍未完整确认。股价月涨16%站上20日线，但低于50日线且距高点36.9%，继续归第二类。",
+      "catalyst": [
+        "Q1 FY27收入103–108亿美元与83%–84.9%毛利率兑现",
+        "数据中心SSD收入和客户认证继续增长",
+        "股价收复1605附近50日线"
+      ],
+      "invalidation": [
+        "NAND价格或数据中心收入环比转弱",
+        "毛利率显著低于83%指引",
+        "反弹后重新跌破1459附近20日线"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "sndk-manual-1",
+          "label": "财务",
+          "state": "positive",
+          "note": "Q4收入89.65亿美元环比增51%，GAAP毛利率84.6%。"
+        },
+        {
+          "id": "sndk-manual-2",
+          "label": "数据中心",
+          "state": "positive",
+          "note": "数据中心收入29.77亿美元，环比增103%。"
+        },
+        {
+          "id": "sndk-manual-3",
+          "label": "指引",
+          "state": "positive",
+          "note": "Q1 FY27收入指引103–108亿美元，毛利率83%–84.9%。"
+        },
+        {
+          "id": "sndk-manual-4",
+          "label": "价格",
+          "state": "warning",
+          "note": "1484.98站上20日线但低于50日线1604.64。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 1,484.98，站上20日线、跌破50日线、站上200日线。",
+        "momentum": "近30日 +16.0%，近90日 -6.6%；RSI14 63.0，距52周高点 -36.9%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "1,484.98",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "1,459.04",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "1,604.64",
+            "role": "resistance"
+          },
+          {
+            "label": "200日线",
+            "value": "970.80",
+            "role": "support"
+          }
+        ],
+        "action": "以1459为短线防守、1605为趋势确认；指引兑现但价格仍无法收复50日线，继续按周期高位折价而非追涨。"
+      },
+      "sources": [
+        "https://www.sandisk.com/company/newsroom/press-releases/2026/2026-08-05-sandisk-reports-fiscal-fourth-quarter-2026-financial-results",
+        "https://finance.yahoo.com/quote/SNDK/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-22",
+        "dataFreshness": "逻辑框架；价格与NAND数据需刷新",
+        "category": "type2",
+        "conviction": "medium",
+        "valuationLogic": "核心变量是NAND ASP、企业级SSD份额、位元出货、渠道库存和毛利率。AI资本开支对企业SSD有帮助，但映射弱于HBM。",
+        "thesis": "Google提高资本开支是二阶利好；服务器投入并不等于NAND采购同比例增长。",
+        "catalyst": [
+          "企业级SSD订单与产品认证上修",
+          "NAND合约价持续上涨",
+          "毛利率改善快于位元成本变化"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "NAND现货与合约价转弱",
+          "渠道库存上升",
+          "企业SSD份额或认证不及预期"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "sndk-enterprise",
+            "label": "企业SSD",
+            "state": "positive",
+            "note": "AI数据中心扩张提供需求支撑。"
+          },
+          {
+            "id": "sndk-mapping",
+            "label": "CapEx映射",
+            "state": "warning",
+            "note": "Google服务器预算优先流向加速器、网络和HBM。"
+          },
+          {
+            "id": "sndk-cycle",
+            "label": "NAND周期",
+            "state": "warning",
+            "note": "供给纪律和价格持续性仍是决定利润的核心。"
+          }
+        ],
+        "technical": {
+          "trend": "需求验证，但价格确认不足",
+          "momentum": "盘后反应弱于HBM/DRAM方向",
+          "structure": "观察是否能在正式盘守住利好涨幅并扩大成交量。",
+          "levels": [
+            {
+              "label": "第一确认",
+              "value": "守住事件日涨幅",
+              "role": "pivot"
+            },
+            {
+              "label": "趋势确认",
+              "value": "跑赢MU与SOXX",
+              "role": "resistance"
+            },
+            {
+              "label": "风险信号",
+              "value": "高开低走",
+              "role": "support"
+            }
+          ],
+          "action": "不要把NAND当作HBM交易；订单和价格数据优先于总CapEx。"
+        },
+        "sources": [
+          "SanDisk财报",
+          "NAND合约价",
+          "企业SSD订单"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-28",
+        "changeSummary": [
+          "强化：NAND与企业级SSD收入/毛利率显著超出旧版信息。",
+          "新增：Q1 FY27收入和毛利率给出清晰验证线。",
+          "未变：价格仍低于50日线，保持第二类。"
+        ],
+        "drivers": [
+          "Sandisk FY26 Q4官方业绩",
+          "数据中心收入环比增103%",
+          "价格位于20日与50日线之间"
+        ],
+        "verdicts": [
+          {
+            "claim": "AI资本开支对NAND是二阶利好",
+            "verdict": "confirmed",
+            "explanation": "数据中心收入翻倍，传导已出现但仍由SSD/NAND价格决定。"
+          },
+          {
+            "claim": "NAND景气仍在",
+            "verdict": "confirmed",
+            "explanation": "收入、毛利率和下一季指引均上修。"
+          },
+          {
+            "claim": "高利润可长期维持",
+            "verdict": "open",
+            "explanation": "需观察供给与价格周期。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "S",
+            "publisher": "a",
+            "publishedAt": "n",
+            "url": "d"
+          },
+          {
+            "title": "S",
+            "publisher": "a",
+            "publishedAt": "n",
+            "url": "d"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wdc",
+      "symbol": "WDC",
+      "name": "Western Digital",
+      "market": "NASDAQ",
+      "sector": "Nearline HDD",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "medium",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "Western Digital FY26 Q4业绩截至2026-08-05；免费日线截至2026-08-28；人工研究更新于2026-08-31。",
+      "valuationLogic": "分拆后的WDC主要按Nearline HDD的容量需求、价格纪律、毛利率和现金回报定价。Q4收入37.5亿美元增44%、自由现金流12.8亿美元，Q1 FY27收入中值约41亿美元；但股价跌破20/50日线，市场在交易HDD周期持续性。",
+      "thesis": "基本面仍上修、价格显著走弱，属于第二类但警戒级别高于MU/SNDK。只有回到475上方并改善相对强度，才算反弹修复。",
+      "catalyst": [
+        "Q1 FY27收入增42%–49%且毛利率约55.5%兑现",
+        "Nearline exabyte出货与价格纪律延续",
+        "股价重新站上475和531两道均线"
+      ],
+      "invalidation": [
+        "云客户库存导致收入指引下修",
+        "毛利率跌破指引且单位容量价格转弱",
+        "跌破366附近200日线"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "wdc-manual-1",
+          "label": "财务",
+          "state": "positive",
+          "note": "Q4收入37.5亿美元同比增44%，自由现金流12.8亿美元。"
+        },
+        {
+          "id": "wdc-manual-2",
+          "label": "指引",
+          "state": "positive",
+          "note": "Q1 FY27收入预计同比增42%–49%，毛利率约55.5%。"
+        },
+        {
+          "id": "wdc-manual-3",
+          "label": "价格",
+          "state": "negative",
+          "note": "459.45低于20日线475.32和50日线531.18，月跌13.8%。"
+        },
+        {
+          "id": "wdc-manual-4",
+          "label": "长趋势",
+          "state": "positive",
+          "note": "仍高于200日线365.59，尚未确认长期破位。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 459.45，跌破20日线、跌破50日线、站上200日线。",
+        "momentum": "近30日 -13.8%，近90日 -13.4%；RSI14 54.1，距52周高点 -42.6%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "459.45",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "475.32",
+            "role": "resistance"
+          },
+          {
+            "label": "50日线",
+            "value": "531.18",
+            "role": "resistance"
+          },
+          {
+            "label": "200日线",
+            "value": "365.59",
+            "role": "support"
+          }
+        ],
+        "action": "475下方保持低配观察；重新站稳475再看531，若强指引下仍跌破366则转第三类风险处置。"
+      },
+      "sources": [
+        "https://investor.wdc.com/node/28586",
+        "https://finance.yahoo.com/quote/WDC/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-22",
+        "dataFreshness": "逻辑框架；价格与出货需刷新",
+        "category": "type2",
+        "conviction": "medium",
+        "valuationLogic": "分拆后WDC更偏HDD。核心变量是云厂商Nearline需求、exabyte出货、单位容量成本、价格和供应纪律。",
+        "thesis": "AI数据中心最终会增加冷数据与近线存储，但传导慢于GPU、HBM和网络。",
+        "catalyst": [
+          "Nearline exabyte出货增长",
+          "云客户订单能见度提高",
+          "价格与毛利率保持纪律"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "云客户库存消化拉长",
+          "单位价格转弱",
+          "供应增长快于exabyte需求"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "wdc-cloud",
+            "label": "云存储需求",
+            "state": "positive",
+            "note": "AI工作负载增加长期数据保存需求。"
+          },
+          {
+            "id": "wdc-lag",
+            "label": "传导时滞",
+            "state": "warning",
+            "note": "总CapEx上调不会立即转化为HDD收入。"
+          },
+          {
+            "id": "wdc-price",
+            "label": "定价纪律",
+            "state": "neutral",
+            "note": "需由公司订单与毛利率指引验证。"
+          }
+        ],
+        "technical": {
+          "trend": "事件驱动小幅受益，仍需验证",
+          "momentum": "相对HBM反应较弱属于合理映射",
+          "structure": "正式盘守住涨幅比盘后瞬时价格更重要。",
+          "levels": [
+            {
+              "label": "确认",
+              "value": "事件日收盘强于SOXX",
+              "role": "pivot"
+            },
+            {
+              "label": "风险",
+              "value": "利好日冲高回落",
+              "role": "support"
+            }
+          ],
+          "action": "等待云订单和exabyte数据，不用AI叙事代替HDD周期数据。"
+        },
+        "sources": [
+          "Western Digital财报",
+          "Nearline出货",
+          "云厂商存储订单"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-28",
+        "changeSummary": [
+          "强化：收入、毛利率与现金流均验证HDD景气。",
+          "新增：Q1 FY27给出42%–49%收入增长指引。",
+          "弱化：价格跌破20/50日线，市场确认明显不足。",
+          "未变：继续归第二类。"
+        ],
+        "drivers": [
+          "WDC FY26 Q4官方业绩与Q1 FY27指引",
+          "自由现金流转强",
+          "月跌13.8%且均线结构转弱"
+        ],
+        "verdicts": [
+          {
+            "claim": "Nearline需求最终受益于AI数据增长",
+            "verdict": "confirmed",
+            "explanation": "收入与下一季指引显著增长。"
+          },
+          {
+            "claim": "传导慢于GPU/HBM",
+            "verdict": "confirmed",
+            "explanation": "强财报未换来强价格，旧版相对判断成立。"
+          },
+          {
+            "claim": "供应纪律会持续",
+            "verdict": "open",
+            "explanation": "需用后续毛利率与单位容量价格验证。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "W",
+            "publisher": "D",
+            "publishedAt": "C",
+            "url": " "
+          },
+          {
+            "title": "W",
+            "publisher": "e",
+            "publishedAt": "s",
+            "url": "t"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "orcl",
+      "symbol": "ORCL",
+      "name": "Oracle",
+      "market": "NYSE",
+      "sector": "云基础设施 / 软件",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "medium",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "Oracle FY26 Q4业绩截至2026-06-10；免费日线截至2026-08-28；人工研究更新于2026-08-31。",
+      "valuationLogic": "Oracle按OCI收入、6380亿美元RPO转化、资本开支/融资和自由现金流定价。Q4 IaaS增93%、RPO增363%，但FY26自由现金流为负236.9亿美元；客户预付或自供GPU的750亿美元硬件部分降低融资压力，却不消除交付风险。",
+      "thesis": "需求能见度极强但现金流与交付仍受质疑。股价已站上20/50日线、仍低于200日线且距高点56%，是第二类中的修复段，不是完整反转。",
+      "catalyst": [
+        "RPO按计划转化并保持IaaS高增长",
+        "客户预付/自供GPU降低资本需求并带来自由现金流拐点",
+        "股价收复171附近200日线"
+      ],
+      "invalidation": [
+        "RPO转化慢于收入指引或数据中心交付延期",
+        "自由现金流继续恶化且融资成本上升",
+        "跌破142附近50日线并失去反弹结构"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "orcl-manual-1",
+          "label": "需求",
+          "state": "positive",
+          "note": "Q4 IaaS收入58亿美元，同比增93%；RPO达6380亿美元。"
+        },
+        {
+          "id": "orcl-manual-2",
+          "label": "融资缓冲",
+          "state": "positive",
+          "note": "大型AI合同中约750亿美元硬件由客户预付或提供。"
+        },
+        {
+          "id": "orcl-manual-3",
+          "label": "现金流",
+          "state": "warning",
+          "note": "FY26经营现金流320亿美元，但自由现金流为负236.9亿美元。"
+        },
+        {
+          "id": "orcl-manual-4",
+          "label": "价格",
+          "state": "warning",
+          "note": "150.85站上20/50日线但仍低于200日线170.66。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 150.85，站上20日线、站上50日线、跌破200日线。",
+        "momentum": "近30日 +18.3%，近90日 -21.0%；RSI14 49.8，距52周高点 -56.4%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "150.85",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "146.98",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "141.55",
+            "role": "support"
+          },
+          {
+            "label": "200日线",
+            "value": "170.66",
+            "role": "resistance"
+          }
+        ],
+        "action": "141–147区间守住可继续观察修复，只有收复171且现金流路径改善才提高信念；RPO强但价格跌回50日线下则降风险。"
+      },
+      "sources": [
+        "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/",
+        "https://finance.yahoo.com/quote/ORCL/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-23",
+        "dataFreshness": "逻辑框架；财报数据需刷新",
+        "category": "type2",
+        "conviction": "medium",
+        "valuationLogic": "Oracle的定价核心是OCI收入、剩余履约义务转化速度、数据中心资本开支、融资成本和自由现金流，而不是单看合同总额。",
+        "thesis": "订单能见度强，但巨额基础设施投入与融资会放大执行风险。属于高增长能见度与现金流压力并存。",
+        "catalyst": [
+          "RPO按计划转化为OCI收入",
+          "云收入增长快于折旧和利息",
+          "自由现金流拐点提前"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "数据中心交付延误",
+          "融资成本上升",
+          "RPO转化明显慢于指引"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "orcl-rpo",
+            "label": "订单能见度",
+            "state": "positive",
+            "note": "RPO与AI云合同提供中期收入基础。"
+          },
+          {
+            "id": "orcl-funding",
+            "label": "融资与CapEx",
+            "state": "warning",
+            "note": "增长需要持续投入，现金流与资产负债表是估值约束。"
+          },
+          {
+            "id": "orcl-execution",
+            "label": "交付执行",
+            "state": "neutral",
+            "note": "关键不在签约，而在容量交付和收入确认。"
+          }
+        ],
+        "technical": {
+          "trend": "高波动增长股，价格需要验证资本开支回报",
+          "momentum": "对融资、利率与CapEx新闻敏感",
+          "structure": "观察财报缺口、20日线与相对QQQ表现。",
+          "levels": [
+            {
+              "label": "确认",
+              "value": "财报缺口上方收稳",
+              "role": "resistance"
+            },
+            {
+              "label": "风险",
+              "value": "好订单、弱股价",
+              "role": "support"
+            }
+          ],
+          "action": "订单只完成第一步；必须继续验证交付、收入、现金流和价格反应。"
+        },
+        "sources": [
+          "Oracle财报",
+          "OCI增长与RPO",
+          "资本开支与融资"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-28",
+        "changeSummary": [
+          "强化：RPO与IaaS增速确认AI订单能见度。",
+          "新增：750亿美元客户预付/自供GPU降低融资需求。",
+          "强化：负自由现金流仍是估值硬约束。",
+          "新增：价格站上20/50日线但未过200日线。"
+        ],
+        "drivers": [
+          "Oracle FY26 Q4官方业绩",
+          "RPO和客户硬件预付结构",
+          "价格从低位修复但仍在200日线下"
+        ],
+        "verdicts": [
+          {
+            "claim": "订单能见度强",
+            "verdict": "confirmed",
+            "explanation": "RPO达6380亿美元且IaaS增93%。"
+          },
+          {
+            "claim": "巨额投入放大执行风险",
+            "verdict": "confirmed",
+            "explanation": "FY26自由现金流仍显著为负。"
+          },
+          {
+            "claim": "自由现金流拐点提前",
+            "verdict": "open",
+            "explanation": "客户硬件安排减压，但尚未由实际现金流确认。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "O",
+            "publisher": "r",
+            "publishedAt": "a",
+            "url": "c"
+          },
+          {
+            "title": "O",
+            "publisher": "r",
+            "publishedAt": "a",
+            "url": "c"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "crcl",
+      "symbol": "CRCL",
+      "name": "Circle",
+      "market": "NYSE",
+      "sector": "稳定币 / 金融科技",
+      "status": "watching",
+      "category": "type1",
+      "conviction": "medium",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "Circle Q2 2026业绩截至2026-08-05，USDC流通量截至2026-08-27；免费日线截至2026-08-28；人工研究更新于2026-08-31。",
+      "valuationLogic": "Circle按USDC流通量×储备收益率减分销成本，再加非利息收入与Arc期权定价。Q2 USDC 733亿美元增19%，储备收入增5%受到收益率下降66bp抵消；8月27日流通量约737亿美元，量增长仍在。",
+      "thesis": "基本面和价格短线同向，升级为第一类：股价站上20/50/200日线、月涨35.6%。但RSI接近70、仍较高点低45%，应按高波动第一类而非无条件追涨。",
+      "catalyst": [
+        "9月16日Arc主网上线并带来真实机构使用",
+        "USDC流通量与非利息收入继续增长",
+        "降息影响被流通量增长和渠道成本改善抵消"
+      ],
+      "invalidation": [
+        "USDC流通量或市场份额连续下降",
+        "储备收益率下降快于规模增长",
+        "跌破85附近200日线并失守76附近20日线"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "crcl-manual-1",
+          "label": "USDC规模",
+          "state": "positive",
+          "note": "Q2末流通量733亿美元同比增19%，8月27日约737亿美元。"
+        },
+        {
+          "id": "crcl-manual-2",
+          "label": "收入敏感性",
+          "state": "warning",
+          "note": "储备收入仅增5%，66bp收益率下降抵消部分规模增长。"
+        },
+        {
+          "id": "crcl-manual-3",
+          "label": "平台催化",
+          "state": "positive",
+          "note": "Arc计划9月16日上线，已有100多个建设者。"
+        },
+        {
+          "id": "crcl-manual-4",
+          "label": "价格",
+          "state": "positive",
+          "note": "87.14站上20/50/200日线，月涨35.6%，RSI14为69.2。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 87.14，站上20日线、站上50日线、站上200日线。",
+        "momentum": "近30日 +35.6%，近90日 -15.1%；RSI14 69.2，距52周高点 -45.4%。",
+        "structure": "短中长期均线共振向上。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "87.14",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "76.04",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "70.41",
+            "role": "support"
+          },
+          {
+            "label": "200日线",
+            "value": "84.84",
+            "role": "support"
+          }
+        ],
+        "action": "不追RSI接近70的单日加速；85/76作为两级防守，Arc上线后用USDC规模和非利息收入验证，而非只看叙事。"
+      },
+      "sources": [
+        "https://www.circle.com/pressroom/circle-reports-second-quarter-2026-results",
+        "https://www.circle.com/transparency",
+        "https://finance.yahoo.com/quote/CRCL/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [
+        {
+          "id": "crcl-arc-mainnet",
+          "date": "2026-09-16",
+          "title": "Arc公开主网上线",
+          "kind": "product",
+          "impact": "high",
+          "status": "scheduled",
+          "preparation": "核对上线是否按时、活跃机构数量、结算量与非利息收入线索。",
+          "source": "https://www.circle.com/pressroom/circle-reports-second-quarter-2026-results"
+        }
+      ],
+      "previousVersion": {
+        "updatedAt": "2026-07-23",
+        "dataFreshness": "逻辑框架；利率与USDC数据需刷新",
+        "category": "unclassified",
+        "conviction": "pending",
+        "valuationLogic": "Circle的核心不是简单的‘稳定币普及’，而是USDC流通量、储备收益率、分销分成、非利息收入和监管框架共同决定单位经济。",
+        "thesis": "USDC增长可以推高储备收入，但降息会压低单位储备收益；估值必须拆成流通量增长与利率敏感性。",
+        "catalyst": [
+          "USDC流通量和市场份额提高",
+          "非利息收入占比提升",
+          "监管明确并扩大机构采用"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "USDC份额下降",
+          "降息快于流通量增长",
+          "分销与渠道成本吞噬储备收益"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "crcl-supply",
+            "label": "USDC流通量",
+            "state": "neutral",
+            "note": "需要按周跟踪净发行与链上使用。"
+          },
+          {
+            "id": "crcl-rates",
+            "label": "利率敏感性",
+            "state": "warning",
+            "note": "短端利率下降会直接压低储备资产收益率。"
+          },
+          {
+            "id": "crcl-reg",
+            "label": "监管",
+            "state": "positive",
+            "note": "清晰规则有利于机构采用，但需观察竞争门槛。"
+          }
+        ],
+        "technical": {
+          "trend": "高叙事、高波动，证据不足以分类",
+          "momentum": "对监管与利率预期高度敏感",
+          "structure": "IPO与事件驱动阶段优先看成交量、缺口和锁定期供应。",
+          "levels": [
+            {
+              "label": "确认",
+              "value": "放量突破后回踩不破",
+              "role": "resistance"
+            },
+            {
+              "label": "风险",
+              "value": "消息刺激冲高回落",
+              "role": "support"
+            }
+          ],
+          "action": "先拆USDC量与储备收益率，不用稳定币总市值直接推导利润。"
+        },
+        "sources": [
+          "Circle财报",
+          "USDC链上流通量",
+          "美国短端利率与监管"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-28",
+        "changeSummary": [
+          "新增：Q2 USDC规模、储备收益和Arc日期均有官方数据。",
+          "强化：量增长仍能抵消部分利率下降。",
+          "新增：价格站上20/50/200日线，升级为第一类。",
+          "待核验：Arc上线后的真实交易和非利息收入。"
+        ],
+        "drivers": [
+          "Circle Q2 2026官方业绩",
+          "8月27日USDC透明度数据",
+          "股价三条均线共振向上"
+        ],
+        "verdicts": [
+          {
+            "claim": "USDC增长可推高储备收入",
+            "verdict": "confirmed",
+            "explanation": "流通量增19%，储备收入增5%。"
+          },
+          {
+            "claim": "降息压低单位储备收益",
+            "verdict": "confirmed",
+            "explanation": "储备收益率同比下降66bp。"
+          },
+          {
+            "claim": "非利息收入会成为主要估值支柱",
+            "verdict": "open",
+            "explanation": "其他收入仅3400万美元，仍需验证。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "C",
+            "publisher": "i",
+            "publishedAt": "r",
+            "url": "c"
+          },
+          {
+            "title": "C",
+            "publisher": "i",
+            "publishedAt": "r",
+            "url": "c"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nok",
+      "symbol": "NOK",
+      "name": "Nokia",
+      "market": "NYSE",
+      "sector": "电信设备 / 光网络",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "medium",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "Nokia Q2 2026业绩截至2026-07-23；免费日线截至2026-08-28；人工研究更新于2026-08-31。",
+      "valuationLogic": "Nokia按AI/Cloud订单转化、光网络与IP网络增长、运营商支出及利润率定价。Q2 AI/Cloud订单28亿欧元、销售增105%，光网络增20%；但报告经营利润率为-1%，重组仍影响GAAP利润。",
+      "thesis": "AI网络已从概念进入订单，但价格只站上20/200日线、仍低于50日线且距高点41.5%。从待分类升级为第二类。",
+      "catalyst": [
+        "28亿欧元AI/Cloud订单按计划约一半在12个月内转收入",
+        "光网络/IP网络增长带动利润率扩张",
+        "股价收复10.92附近50日线"
+      ],
+      "invalidation": [
+        "AI/Cloud订单转化明显慢于承诺",
+        "可比利润率改善但GAAP现金流持续恶化",
+        "跌破9.53附近200日线"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "nok-manual-1",
+          "label": "订单",
+          "state": "positive",
+          "note": "Q2 AI/Cloud订单28亿欧元，约一半预计12个月内转收入。"
+        },
+        {
+          "id": "nok-manual-2",
+          "label": "增长",
+          "state": "positive",
+          "note": "光网络增20%、IP网络增16%，AI/Cloud客户销售增105%。"
+        },
+        {
+          "id": "nok-manual-3",
+          "label": "利润",
+          "state": "warning",
+          "note": "可比经营利润率9%，但报告口径为-1%，重组影响仍大。"
+        },
+        {
+          "id": "nok-manual-4",
+          "label": "价格",
+          "state": "warning",
+          "note": "10.21高于20/200日线但低于50日线10.92。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 10.21，站上20日线、跌破50日线、站上200日线。",
+        "momentum": "近30日 +12.3%，近90日 -34.9%；RSI14 64.8，距52周高点 -41.5%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "10.21",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "10.05",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "10.92",
+            "role": "resistance"
+          },
+          {
+            "label": "200日线",
+            "value": "9.53",
+            "role": "support"
+          }
+        ],
+        "action": "10.92是订单叙事转为价格确认的门槛；未收复前按第二类观察，跌破9.53且订单转化放缓则转防守。"
+      },
+      "sources": [
+        "https://www.nokia.com/newsroom/nokia-corporation-report-for-q2-and-half-year-2026/",
+        "https://finance.yahoo.com/quote/NOK/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-23",
+        "dataFreshness": "逻辑框架；订单与利润率需刷新",
+        "category": "unclassified",
+        "conviction": "pending",
+        "valuationLogic": "Nokia的定价取决于网络基础设施订单、运营商资本开支、数据中心互联、毛利率和现金回报。AI叙事必须最终体现为光网络订单。",
+        "thesis": "数据中心网络是潜在增量，但传统运营商支出仍可能拖累。需要订单结构而不是概念归类。",
+        "catalyst": [
+          "光网络与数据中心互联订单加速",
+          "毛利率改善",
+          "运营商资本开支企稳"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "订单增长只来自低利润项目",
+          "运营商需求继续下修",
+          "自由现金流弱于利润"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "nok-optical",
+            "label": "光网络订单",
+            "state": "neutral",
+            "note": "是AI数据中心逻辑能否兑现的核心验证。"
+          },
+          {
+            "id": "nok-telco",
+            "label": "运营商周期",
+            "state": "warning",
+            "note": "传统业务可能抵消数据中心增量。"
+          },
+          {
+            "id": "nok-margin",
+            "label": "利润率",
+            "state": "neutral",
+            "note": "订单质量比收入总额更重要。"
+          }
+        ],
+        "technical": {
+          "trend": "待分类，先等订单与价格共同确认",
+          "momentum": "概念驱动不能代替基本面",
+          "structure": "突破需要成交量与盈利上修共同支持。",
+          "levels": [
+            {
+              "label": "确认",
+              "value": "放量突破并保持",
+              "role": "resistance"
+            },
+            {
+              "label": "风险",
+              "value": "订单利好无法留住涨幅",
+              "role": "support"
+            }
+          ],
+          "action": "先验证光网络订单，再决定它是AI顺风股还是传统设备周期股。"
+        },
+        "sources": [
+          "Nokia财报",
+          "网络基础设施订单",
+          "运营商CapEx"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-28",
+        "changeSummary": [
+          "新增：AI/Cloud订单28亿欧元且给出12个月转化线索。",
+          "强化：光网络和IP网络增长证实AI传导。",
+          "弱化：GAAP经营利润率仍受重组压制。",
+          "新增：从待分类升级为第二类。"
+        ],
+        "drivers": [
+          "Nokia Q2 2026官方报告",
+          "AI/Cloud订单与网络基础设施增长",
+          "价格高于200日但未过50日线"
+        ],
+        "verdicts": [
+          {
+            "claim": "数据中心网络是潜在增量",
+            "verdict": "confirmed",
+            "explanation": "AI/Cloud客户销售增105%，订单28亿欧元。"
+          },
+          {
+            "claim": "必须看订单结构而非概念",
+            "verdict": "confirmed",
+            "explanation": "官方披露了订单与转化时点，旧版框架有效。"
+          },
+          {
+            "claim": "运营商拖累已经消失",
+            "verdict": "open",
+            "explanation": "仍需后续分部和现金流验证。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "N",
+            "publisher": "o",
+            "publishedAt": "k",
+            "url": "i"
+          },
+          {
+            "title": "N",
+            "publisher": "o",
+            "publishedAt": "k",
+            "url": "i"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "aaoi",
+      "symbol": "AAOI",
+      "name": "Applied Optoelectronics",
+      "market": "NASDAQ",
+      "sector": "光模块 / 数据中心",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "medium",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "AAOI Q2 2026业绩截至2026-08-06；免费日线截至2026-08-28；人工研究更新于2026-08-31。",
+      "valuationLogic": "AAOI按800G/1.6T订单、产能、良率、毛利率和客户集中度定价。Q2收入1.919亿美元创连续第五个纪录季度，800G量环比翻倍；但GAAP毛利率降至27.7%、仍净亏2280万美元。",
+      "thesis": "需求强但盈利质量与价格确认不足。股价低于20/50日线、仅略高于200日线，继续是高弹性第二类。",
+      "catalyst": [
+        "Q3收入2.55–2.90亿美元与29%–30.5%非GAAP毛利率兑现",
+        "产能从月产约20万提升至年底约65万且良率同步改善",
+        "股价收复123–127区间均线"
+      ],
+      "invalidation": [
+        "需求高于产能却未带来毛利率扩张",
+        "大客户订单或认证延迟",
+        "跌破99.5附近200日线"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "aaoi-manual-1",
+          "label": "需求",
+          "state": "positive",
+          "note": "800G出货量环比翻倍，公司称需求超过产能至2027年中。"
+        },
+        {
+          "id": "aaoi-manual-2",
+          "label": "收入指引",
+          "state": "positive",
+          "note": "Q3收入指引2.55–2.90亿美元，高于Q2。"
+        },
+        {
+          "id": "aaoi-manual-3",
+          "label": "盈利质量",
+          "state": "warning",
+          "note": "GAAP毛利率降至27.7%，GAAP净亏2280万美元。"
+        },
+        {
+          "id": "aaoi-manual-4",
+          "label": "价格",
+          "state": "negative",
+          "note": "106.23低于20/50日线，仅略高于200日线99.47。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 106.23，跌破20日线、跌破50日线、站上200日线。",
+        "momentum": "近30日 +17.9%，近90日 -40.9%；RSI14 38.2，距52周高点 -54.5%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "106.23",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "126.61",
+            "role": "resistance"
+          },
+          {
+            "label": "50日线",
+            "value": "122.55",
+            "role": "resistance"
+          },
+          {
+            "label": "200日线",
+            "value": "99.47",
+            "role": "support"
+          }
+        ],
+        "action": "把99.5视为长趋势防线、123–127为确认带；在毛利率未随产能爬坡改善前，不把订单强度等同于盈利兑现。"
+      },
+      "sources": [
+        "https://investors.ao-inc.com/news-releases/news-release-details/applied-optoelectronics-reports-second-quarter-2026-results",
+        "https://finance.yahoo.com/quote/AAOI/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-23",
+        "dataFreshness": "逻辑框架；客户订单需刷新",
+        "category": "type2",
+        "conviction": "medium",
+        "valuationLogic": "AAOI的盈利弹性来自800G/1.6T产品放量、客户订单、产能利用率、良率和毛利率；客户集中度会放大任何订单变化。",
+        "thesis": "AI网络需求提供高弹性，但估值需要由明确订单和毛利率兑现。强叙事、弱订单透明度时容易出现第二类出清。",
+        "catalyst": [
+          "800G/1.6T订单与认证上修",
+          "产能利用率和良率改善",
+          "客户结构更加分散"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "大客户订单推迟",
+          "良率不及预期",
+          "收入增长但毛利率不升"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "aaoi-orders",
+            "label": "客户订单",
+            "state": "neutral",
+            "note": "必须由公司指引与交付数据验证。"
+          },
+          {
+            "id": "aaoi-network",
+            "label": "AI网络需求",
+            "state": "positive",
+            "note": "高速互联是AI集群的必要投入。"
+          },
+          {
+            "id": "aaoi-concentration",
+            "label": "客户集中",
+            "state": "warning",
+            "note": "单一客户变化会显著放大盈利波动。"
+          }
+        ],
+        "technical": {
+          "trend": "高Beta第二类，等待量价确认",
+          "momentum": "利好环境下若不跑赢SOXX，属于弱势",
+          "structure": "观察突破是否有成交量和订单数据共同支撑。",
+          "levels": [
+            {
+              "label": "确认",
+              "value": "放量突破前高",
+              "role": "resistance"
+            },
+            {
+              "label": "风险",
+              "value": "利好日长上影",
+              "role": "support"
+            }
+          ],
+          "action": "订单确认前控制合约期限与仓位，避免只交易推特叙事。"
+        },
+        "sources": [
+          "AAOI财报",
+          "客户订单与认证",
+          "800G/1.6T行业数据"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-28",
+        "changeSummary": [
+          "强化：800G量、收入和产能计划证明需求。",
+          "新增：Q3收入与毛利率给出可验证基准。",
+          "弱化：GAAP毛利率环比下降且仍亏损。",
+          "未变：继续归第二类。"
+        ],
+        "drivers": [
+          "AAOI Q2 2026官方业绩",
+          "产能与Q3指引",
+          "股价跌破20/50日线"
+        ],
+        "verdicts": [
+          {
+            "claim": "AI网络需求提供高弹性",
+            "verdict": "confirmed",
+            "explanation": "800G量翻倍且需求超过产能。"
+          },
+          {
+            "claim": "估值必须由毛利率兑现",
+            "verdict": "confirmed",
+            "explanation": "收入创新高但GAAP毛利率下降、仍亏损。"
+          },
+          {
+            "claim": "客户结构已明显分散",
+            "verdict": "open",
+            "explanation": "官方披露仍不足以确认。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "A",
+            "publisher": "A",
+            "publishedAt": "O",
+            "url": "I"
+          },
+          {
+            "title": "A",
+            "publisher": "p",
+            "publishedAt": "p",
+            "url": "l"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "axti",
+      "symbol": "AXTI",
+      "name": "AXT",
+      "market": "NASDAQ",
+      "sector": "InP / GaAs衬底",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "low",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "AXT Q2 2026业绩截至2026-07-30；免费日线截至2026-08-28；人工研究更新于2026-08-31。",
+      "valuationLogic": "AXTI按InP需求、出口许可、产能利用率、毛利率和摊薄定价。Q2收入4760万美元、毛利率44.9%、转盈1110万美元，基本面拐点清楚；但稀释后股数同比从4370万升至6350万，库存也上升。",
+      "thesis": "从待分类转第二类：盈利拐点已确认，价格却低于20/50日线且距高点59%。出口许可、库存与摊薄使它比AAOI更高风险。",
+      "catalyst": [
+        "InP收入与毛利率连续两个季度维持高位",
+        "出口许可不再影响交付且产能顺利爬坡",
+        "股价收复65和74附近50/20日线"
+      ],
+      "invalidation": [
+        "出口限制导致收入确认延迟",
+        "库存继续上升且毛利率回落",
+        "跌破53.4附近200日线"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "axti-manual-1",
+          "label": "财务",
+          "state": "positive",
+          "note": "Q2收入4760万美元，GAAP毛利率44.9%，净利润1110万美元。"
+        },
+        {
+          "id": "axti-manual-2",
+          "label": "产品",
+          "state": "positive",
+          "note": "InP季度收入创公司纪录，AI光互联需求传导明确。"
+        },
+        {
+          "id": "axti-manual-3",
+          "label": "稀释/库存",
+          "state": "warning",
+          "note": "稀释后股数同比显著增加，库存升至9630万美元。"
+        },
+        {
+          "id": "axti-manual-4",
+          "label": "价格",
+          "state": "negative",
+          "note": "58.63低于20/50日线，距52周高点59%。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 58.63，跌破20日线、跌破50日线、站上200日线。",
+        "momentum": "近30日 +24.9%，近90日 -52.2%；RSI14 39.0，距52周高点 -59.0%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "58.63",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "73.53",
+            "role": "resistance"
+          },
+          {
+            "label": "50日线",
+            "value": "64.96",
+            "role": "resistance"
+          },
+          {
+            "label": "200日线",
+            "value": "53.42",
+            "role": "support"
+          }
+        ],
+        "action": "只按小仓高波动观察；53.4失守则退出趋势假设，收复65/74且出口与库存风险改善才升级信念。"
+      },
+      "sources": [
+        "https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-Second-Quarter-2026-Financial-Results/default.aspx",
+        "https://finance.yahoo.com/quote/AXTI/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-23",
+        "dataFreshness": "逻辑框架；出口与订单需刷新",
+        "category": "unclassified",
+        "conviction": "pending",
+        "valuationLogic": "AXTI的核心是InP/GaAs衬底需求、光通信订单、客户集中、产能利用率和中国供应链/出口限制。它处于产业链更上游，传导有时滞。",
+        "thesis": "AI光通信可以改善InP需求，但政策、客户和库存风险足以抵消行业景气。现阶段证据不足以直接归类。",
+        "catalyst": [
+          "InP订单与产能利用率上升",
+          "光通信客户库存正常化",
+          "出口与合规风险缓解"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "出口限制影响交付",
+          "客户库存继续消化",
+          "收入增长无法带动毛利率"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "axti-inp",
+            "label": "InP需求",
+            "state": "neutral",
+            "note": "需由光模块客户订单和公司指引验证。"
+          },
+          {
+            "id": "axti-policy",
+            "label": "政策风险",
+            "state": "negative",
+            "note": "供应链与出口限制可能改变交付能力。"
+          },
+          {
+            "id": "axti-upstream",
+            "label": "上游时滞",
+            "state": "warning",
+            "note": "云厂商CapEx不会立即等比例传导至衬底收入。"
+          }
+        ],
+        "technical": {
+          "trend": "待分类，事件敏感度高",
+          "momentum": "容易受订单传闻与政策消息驱动",
+          "structure": "需要价格突破与盈利预测上修同步出现。",
+          "levels": [
+            {
+              "label": "确认",
+              "value": "突破后回踩不破",
+              "role": "resistance"
+            },
+            {
+              "label": "风险",
+              "value": "政策消息下放量破位",
+              "role": "support"
+            }
+          ],
+          "action": "把政策风险当作一等变量；不要用光模块需求直接替代AXTI订单。"
+        },
+        "sources": [
+          "AXT财报",
+          "InP/GaAs订单",
+          "出口与供应链政策"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-28",
+        "changeSummary": [
+          "新增：收入、毛利率和盈利拐点已由Q2财报确认。",
+          "新增：稀释股数和库存上升构成估值折扣。",
+          "新增：从待分类转为第二类、但信念低。",
+          "强化：价格仍远弱于基本面。"
+        ],
+        "drivers": [
+          "AXT Q2 2026官方业绩",
+          "InP收入纪录",
+          "股权稀释、库存和出口许可风险"
+        ],
+        "verdicts": [
+          {
+            "claim": "AI光通信改善InP需求",
+            "verdict": "confirmed",
+            "explanation": "Q2 InP收入创新高并带动毛利率。"
+          },
+          {
+            "claim": "收入增长能带动毛利率",
+            "verdict": "confirmed",
+            "explanation": "毛利率由上季29.6%升至44.9%。"
+          },
+          {
+            "claim": "政策与摊薄风险可忽略",
+            "verdict": "invalidated",
+            "explanation": "出口许可仍是风险，稀释后股数同比明显上升。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "A",
+            "publisher": "X",
+            "publishedAt": "T",
+            "url": " "
+          },
+          {
+            "title": "A",
+            "publisher": "X",
+            "publishedAt": "T"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gold-futures",
+      "symbol": "GC=F",
+      "name": "黄金期货",
+      "market": "COMEX",
+      "sector": "大宗商品 / 贵金属",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "medium",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "WGC需求资料截至2026-08-24；期货日线截至2026-08-31（Yahoo Finance，可能延迟）；人工研究更新于2026-08-31。",
+      "valuationLogic": "黄金按实际利率、美元、央行/ETF需求和风险溢价定价。Q2央行净购金289吨、7月中国央行加仓20吨，结构需求强；但10年实际利率仍2.42%，价格尚未站上200日线。",
+      "thesis": "基本面支撑与短线反弹成立，但长期均线尚未确认，归第二类。强美元/实际利率上升仍可能压制，不能只按避险叙事追涨。",
+      "catalyst": [
+        "全球黄金ETF流入延续且央行净购金保持高位",
+        "10年实际利率回落、美元同步转弱",
+        "价格站稳4515附近200日线"
+      ],
+      "invalidation": [
+        "实际利率继续上升且ETF重新持续流出",
+        "跌破4434与4214两级均线",
+        "地缘利多无法让价格保留涨幅"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "gcf-manual-1",
+          "label": "央行需求",
+          "state": "positive",
+          "note": "Q2央行净需求289吨；中国7月增持20吨。"
+        },
+        {
+          "id": "gcf-manual-2",
+          "label": "ETF/投资",
+          "state": "positive",
+          "note": "7月欧洲和中国ETF流入改善，8月亚洲需求仍有支撑。"
+        },
+        {
+          "id": "gcf-manual-3",
+          "label": "实际利率",
+          "state": "warning",
+          "note": "美国10年实际收益率8月28日为2.42%。"
+        },
+        {
+          "id": "gcf-manual-4",
+          "label": "价格",
+          "state": "warning",
+          "note": "4484.7高于20/50日线但低于200日线4515.3。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-31 收于 4,484.7，站上20日线、站上50日线、跌破200日线。",
+        "momentum": "近30日 +10.8%，近90日 -0.3%；RSI14 57.9，距52周高点 -19.7%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "4,484.7",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "4,434.24",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "4,213.99",
+            "role": "support"
+          },
+          {
+            "label": "200日线",
+            "value": "4,515.29",
+            "role": "resistance"
+          }
+        ],
+        "action": "4515上方站稳才视为第二类转第一类；4434失守先减，4214失守则把反弹判定失败。"
+      },
+      "sources": [
+        "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-q2-2026/central-banks",
+        "https://www.gold.org/goldhub/gold-focus/2026/08/china-gold-market-update-strong-official-sector-buying-july",
+        "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_real_yield_curve",
+        "https://finance.yahoo.com/quote/GC=F/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-24",
+        "dataFreshness": "研究框架已建立；价格由行情接口自动读取",
+        "category": "unclassified",
+        "conviction": "pending",
+        "valuationLogic": "黄金主要由实际利率、美元、央行与ETF需求、期货仓位、地缘风险和通胀尾部共同定价。单一避险叙事不足以决定趋势。",
+        "thesis": "先观察实际利率与美元方向是否和价格形成同向确认，再判断是趋势延续、拥挤出清还是宏观预期反转。",
+        "catalyst": [
+          "实际利率回落且美元转弱",
+          "央行与黄金ETF净需求上升",
+          "突破关键阻力后持仓未出现过热"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "实际利率与美元同步走强",
+          "ETF持续流出且期货净多仓拥挤",
+          "利多事件无法让价格保留涨幅"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "gold-real-yield",
+            "label": "实际利率",
+            "state": "neutral",
+            "note": "待接入美债实际收益率并验证与金价的方向关系。"
+          },
+          {
+            "id": "gold-flows",
+            "label": "ETF与央行需求",
+            "state": "neutral",
+            "note": "待核验ETF持仓和官方储备变化。"
+          },
+          {
+            "id": "gold-positioning",
+            "label": "期货仓位",
+            "state": "neutral",
+            "note": "待核验CFTC持仓与期限结构。"
+          }
+        ],
+        "technical": {
+          "trend": "由K线页动态验证",
+          "momentum": "观察RSI、均线斜率与突破后的留存幅度",
+          "structure": "优先看前高前低、20/50/200日均线与波动区间。",
+          "levels": [],
+          "action": "宏观变量与价格同时确认后再定方向；不只因避险新闻追价。"
+        },
+        "sources": [
+          "CME/COMEX黄金期货",
+          "CFTC持仓报告",
+          "黄金ETF与央行储备数据"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-31",
+        "changeSummary": [
+          "新增：央行与ETF需求得到WGC数据支持。",
+          "新增：实际利率2.42%解释为何反弹仍受估值约束。",
+          "新增：由待分类转为第二类。"
+        ],
+        "drivers": [
+          "World Gold Council央行与ETF数据",
+          "美国实际收益率",
+          "价格在20/50日线上但未过200日线"
+        ],
+        "verdicts": [
+          {
+            "claim": "实际利率与ETF流向是核心验证项",
+            "verdict": "confirmed",
+            "explanation": "实际利率仍高、ETF流向改善共同解释震荡。"
+          },
+          {
+            "claim": "央行需求提供结构支撑",
+            "verdict": "confirmed",
+            "explanation": "Q2央行净购金显著回升。"
+          },
+          {
+            "claim": "长期趋势已完全恢复",
+            "verdict": "open",
+            "explanation": "尚未站稳200日线。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "中",
+            "publisher": "国",
+            "publishedAt": "7",
+            "url": "月"
+          },
+          {
+            "title": "W",
+            "publisher": "o",
+            "publishedAt": "r",
+            "url": "l"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "silver-futures",
+      "symbol": "SI=F",
+      "name": "白银期货",
+      "market": "COMEX",
+      "sector": "大宗商品 / 贵金属与工业金属",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "medium",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "Silver Institute 2026展望截至2026-04；期货日线截至2026-08-31；人工研究更新于2026-08-31。",
+      "valuationLogic": "白银按黄金方向、投资需求、工业需求、库存和供给缺口定价。2026预计连续第六年供需缺口，但工业制造需求预计下降2%至约6.5亿盎司，供给紧张与光伏节银/替代同时存在。",
+      "thesis": "短线反弹强、基本面混合，价格仍低于200日线，归第二类。不能把结构性缺口等同于工业需求单边上升。",
+      "catalyst": [
+        "价格站稳71.64附近200日线且金银比下降",
+        "投资需求增长抵消工业需求下滑",
+        "库存下降与近月结构同步确认紧张"
+      ],
+      "invalidation": [
+        "工业需求下修扩大并伴随库存上升",
+        "跌破65.72与61.65均线",
+        "黄金走弱且金银比重新走高"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "sif-manual-1",
+          "label": "供需缺口",
+          "state": "positive",
+          "note": "Silver Institute预计2026连续第六年市场缺口。"
+        },
+        {
+          "id": "sif-manual-2",
+          "label": "工业需求",
+          "state": "warning",
+          "note": "工业制造需求预计下降2%至约6.5亿盎司，光伏节银和替代是压力。"
+        },
+        {
+          "id": "sif-manual-3",
+          "label": "价格",
+          "state": "warning",
+          "note": "67.29高于20/50日线但低于200日线71.64。"
+        },
+        {
+          "id": "sif-manual-4",
+          "label": "波动",
+          "state": "warning",
+          "note": "距52周高点仍44.5%，高波动特征明显。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-31 收于 67.28，站上20日线、站上50日线、跌破200日线。",
+        "momentum": "近30日 +16.8%，近90日 -11.1%；RSI14 57.7，距52周高点 -44.5%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "67.28",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "65.72",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "61.65",
+            "role": "support"
+          },
+          {
+            "label": "200日线",
+            "value": "71.64",
+            "role": "resistance"
+          }
+        ],
+        "action": "71.64上方才视为趋势确认；65.72/61.65是两级防守，工业需求数据弱于预期时不因‘缺口’叙事补仓。"
+      },
+      "sources": [
+        "https://silverinstitute.org/global-silver-investment-to-remain-strong-in-2026-against-the-backdrop-of-a-sixth-consecutive-annual-market-deficit/",
+        "https://silverinstitute.org/wp-content/uploads/2026/04/World-Silver-Survey-2026.pdf",
+        "https://finance.yahoo.com/quote/SI=F/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-24",
+        "dataFreshness": "研究框架已建立；价格由行情接口自动读取",
+        "category": "unclassified",
+        "conviction": "pending",
+        "valuationLogic": "白银同时受黄金货币属性、工业需求、库存、矿端供给和金银比影响，通常波动高于黄金，不能只用黄金方向线性外推。",
+        "thesis": "需要黄金趋势、工业需求预期与白银自身库存/持仓共同确认，才把高波动视为趋势而非挤仓。",
+        "catalyst": [
+          "黄金上行且金银比下降",
+          "工业与光伏需求预期上修",
+          "交易所库存下降并伴随价格突破"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "工业需求预期下修",
+          "库存回升且金银比重新走高",
+          "突破后快速跌回区间"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "silver-ratio",
+            "label": "金银比",
+            "state": "neutral",
+            "note": "待验证白银相对黄金的强弱是否持续。"
+          },
+          {
+            "id": "silver-demand",
+            "label": "工业需求",
+            "state": "neutral",
+            "note": "待核验光伏、电子与制造业需求。"
+          },
+          {
+            "id": "silver-inventory",
+            "label": "库存与仓位",
+            "state": "neutral",
+            "note": "待核验COMEX库存和CFTC仓位。"
+          }
+        ],
+        "technical": {
+          "trend": "由K线页动态验证",
+          "momentum": "重点观察相对白银/黄金比与波动扩张",
+          "structure": "高波动品种需要突破、回踩与成交量共同确认。",
+          "levels": [],
+          "action": "仓位按更高波动率折减，避免用黄金仓位尺度直接套用。"
+        },
+        "sources": [
+          "CME/COMEX白银期货",
+          "CFTC持仓报告",
+          "交易所库存与工业需求数据"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-31",
+        "changeSummary": [
+          "新增：2026连续第六年缺口得到官方行业报告支持。",
+          "新增：工业需求预计下降2%，纠正单一供给短缺叙事。",
+          "新增：由待分类转为第二类。"
+        ],
+        "drivers": [
+          "Silver Institute 2026供需展望",
+          "工业需求与光伏节银风险",
+          "价格未站稳200日线"
+        ],
+        "verdicts": [
+          {
+            "claim": "白银不能只按黄金线性外推",
+            "verdict": "confirmed",
+            "explanation": "工业需求预期下降与货币属性并存。"
+          },
+          {
+            "claim": "市场存在结构性缺口",
+            "verdict": "confirmed",
+            "explanation": "2026预计连续第六年缺口。"
+          },
+          {
+            "claim": "库存与金银比已完全确认趋势",
+            "verdict": "open",
+            "explanation": "当前证据不足。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "S",
+            "publisher": "i",
+            "publishedAt": "l",
+            "url": "v"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wti-futures",
+      "symbol": "CL=F",
+      "name": "WTI原油期货",
+      "market": "NYMEX",
+      "sector": "大宗商品 / 能源",
+      "status": "watching",
+      "category": "type1",
+      "conviction": "medium",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "EIA 2026年8月STEO截至2026-08-11；期货日线截至2026-08-31；人工研究更新于2026-08-31。",
+      "valuationLogic": "WTI按库存、OPEC+实际供应、霍尔木兹通行、期限结构和需求预期定价。EIA预计中东供应中断压低库存、Q3 Brent均价约85美元；但2027随产量恢复预计均价降至69美元，当前多头逻辑偏短周期。",
+      "thesis": "短期供需与价格同向，升级为第一类：WTI站上20/50/200日线。它是事件驱动的第一类，不是长期永久短缺。",
+      "catalyst": [
+        "霍尔木兹运输限制持续并令全球库存进一步下降",
+        "美国商业原油库存维持五年区间低位",
+        "价格守住82.6/79.5并突破前期压力"
+      ],
+      "invalidation": [
+        "运输恢复快于预期并推动库存回补",
+        "跌破79.5和78.2的50/200日线",
+        "EIA/OPEC需求预测下修且月差走弱"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "clf-manual-1",
+          "label": "供给",
+          "state": "positive",
+          "note": "EIA假设霍尔木兹运输受限在8月持续，并有约60万桶/日中断延续至2027年末。"
+        },
+        {
+          "id": "clf-manual-2",
+          "label": "库存",
+          "state": "positive",
+          "note": "EIA预计美国商业原油库存2026年底前低于五年低位。"
+        },
+        {
+          "id": "clf-manual-3",
+          "label": "远期价格",
+          "state": "warning",
+          "note": "EIA预计供应恢复后2027 Brent均价降至约69美元。"
+        },
+        {
+          "id": "clf-manual-4",
+          "label": "价格",
+          "state": "positive",
+          "note": "85.89站上20/50/200日线，短期趋势确认。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-31 收于 85.89，站上20日线、站上50日线、站上200日线。",
+        "momentum": "近30日 +1.4%，近90日 -3.4%；RSI14 57.4，距52周高点 -28.1%。",
+        "structure": "短中长期均线共振向上。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "85.89",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "82.56",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "79.49",
+            "role": "support"
+          },
+          {
+            "label": "200日线",
+            "value": "78.18",
+            "role": "support"
+          }
+        ],
+        "action": "以82.6和79.5为跟踪止损；库存和月差未继续收紧时不追地缘跳涨，跌破200日线则退出第一类。"
+      },
+      "sources": [
+        "https://www.eia.gov/outlooks/steo/",
+        "https://www.eia.gov/outlooks/steo/archives/aug26.pdf",
+        "https://finance.yahoo.com/quote/CL=F/history/"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [
+        {
+          "id": "eia-steo-2026-09",
+          "date": "2026-09-09",
+          "title": "EIA 9月短期能源展望",
+          "kind": "industry",
+          "impact": "high",
+          "status": "scheduled",
+          "preparation": "核对霍尔木兹运输、全球库存、Q4 Brent预测和美国商业库存路径。",
+          "source": "https://www.eia.gov/outlooks/steo/"
+        }
+      ],
+      "previousVersion": {
+        "updatedAt": "2026-07-24",
+        "dataFreshness": "研究框架已建立；价格由行情接口自动读取",
+        "category": "unclassified",
+        "conviction": "pending",
+        "valuationLogic": "WTI由全球需求、OPEC+供给、美国库存与产量、炼厂开工、期限结构和地缘供应风险共同定价。现货紧张需由库存和月差验证。",
+        "thesis": "先用库存、期限结构和价格反应区分真实供需紧张与短期地缘溢价，再决定是否追随趋势。",
+        "catalyst": [
+          "库存持续下降且近月升水扩大",
+          "OPEC+实际减产强于市场预期",
+          "需求预期上修并伴随裂解价差改善"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "库存连续累积且期限结构走弱",
+          "实际增产或需求预测下修",
+          "供应中断新闻无法让价格保留涨幅"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "wti-inventory",
+            "label": "EIA库存",
+            "state": "neutral",
+            "note": "待核验原油、汽油和馏分油库存变化。"
+          },
+          {
+            "id": "wti-curve",
+            "label": "期限结构",
+            "state": "neutral",
+            "note": "待验证近远月价差是否支持现货紧张。"
+          },
+          {
+            "id": "wti-supply",
+            "label": "OPEC+与美国产量",
+            "state": "neutral",
+            "note": "待核验实际产量而非仅看口头配额。"
+          }
+        ],
+        "technical": {
+          "trend": "由K线页动态验证",
+          "momentum": "观察事件跳空能否在收盘保留",
+          "structure": "结合期限结构判断突破是否由现货驱动。",
+          "levels": [],
+          "action": "地缘事件只作触发器，库存和月差不确认时控制追价。"
+        },
+        "sources": [
+          "NYMEX WTI期货",
+          "EIA周度石油库存",
+          "OPEC月报与期限结构"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-31",
+        "changeSummary": [
+          "新增：EIA把Q3 Brent均价上调至约85美元。",
+          "新增：库存与霍尔木兹约束支持短期供需。",
+          "新增：价格站上三条均线，升级为第一类。",
+          "强化：2027回落预测要求把逻辑限定为短周期。"
+        ],
+        "drivers": [
+          "EIA 2026年8月STEO",
+          "中东供应与库存预测",
+          "WTI三条均线共振"
+        ],
+        "verdicts": [
+          {
+            "claim": "库存和现货紧张比新闻标题更重要",
+            "verdict": "confirmed",
+            "explanation": "EIA明确给出库存和运输约束。"
+          },
+          {
+            "claim": "地缘溢价可以长期维持",
+            "verdict": "open",
+            "explanation": "EIA预计2027供应恢复后价格回落。"
+          },
+          {
+            "claim": "当前短期趋势向上",
+            "verdict": "confirmed",
+            "explanation": "价格站上20/50/200日线。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "E",
+            "publisher": "I",
+            "publishedAt": "A",
+            "url": " "
+          },
+          {
+            "title": "U",
+            "publisher": ".",
+            "publishedAt": "S",
+            "url": "."
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "btc-perpetual",
+      "symbol": "BTC-USD",
+      "name": "Bitcoin 永续",
+      "market": "BINANCE FUTURES",
+      "sector": "加密资产 / BTCUSDT永续",
+      "status": "watching",
+      "category": "type1",
+      "conviction": "low",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "CoinGecko现货日线截至2026-08-31；当前网络访问Binance USDⓈ-M Futures返回HTTP 451，资金费率、基差和持仓量未取得；人工研究更新于2026-08-31。",
+      "valuationLogic": "BTC按全球流动性、现货需求、ETF通道、长期持有人供给和永续杠杆定价。现货价格站上20/50/200日线，趋势向上；但币安永续资金费率与持仓量在本次环境不可用，无法判断上涨由现货还是杠杆推动。",
+      "thesis": "暂定第一类、低信念：价格共振向上且30/90日均为正，但RSI14约79，已经过热；缺少永续杠杆数据时不把突破当作低风险追涨点。",
+      "catalyst": [
+        "Binance资金费率温和且持仓量增长由现货成交配合",
+        "价格回踩7.24万美元20日线后守住",
+        "ETF/现货需求延续而长期持有人抛压可控"
+      ],
+      "invalidation": [
+        "跌破7.24万美元并进一步失守6.94万美元200日线",
+        "资金费率和持仓量过热而价格滞涨",
+        "现货需求转负并出现高位放量分配"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "btc-usd-manual-1",
+          "label": "价格趋势",
+          "state": "positive",
+          "note": "CoinGecko现货约7.80万美元，站上20/50/200日线。"
+        },
+        {
+          "id": "btc-usd-manual-2",
+          "label": "动量",
+          "state": "warning",
+          "note": "近30日涨24.3%，RSI14约79.4，短线过热。"
+        },
+        {
+          "id": "btc-usd-manual-3",
+          "label": "永续杠杆",
+          "state": "neutral",
+          "note": "Binance接口因地区限制返回451，资金费率、基差与持仓量未核验。"
+        },
+        {
+          "id": "btc-usd-manual-4",
+          "label": "高点距离",
+          "state": "warning",
+          "note": "仍比52周高点低约37.5%，反弹与新高周期尚未等同。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-31 收于 77,996.04，站上20日线、站上50日线、站上200日线。",
+        "momentum": "近30日 +24.3%，近90日 +16.9%；RSI14 79.4，距52周高点 -37.5%。",
+        "structure": "短中长期均线共振向上。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "77,996.04",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "72,438.46",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "67,566.96",
+            "role": "support"
+          },
+          {
+            "label": "200日线",
+            "value": "69,402.17",
+            "role": "support"
+          }
+        ],
+        "action": "不在RSI约79时追涨；优先等回踩7.24万附近，恢复币安数据后再用资金费率/OI决定是否提高信念。"
+      },
+      "sources": [
+        "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365&interval=daily",
+        "https://developers.binance.com/docs/derivatives",
+        "https://www.sec.gov/Archives/edgar/data/1763415/000119312526340183/bitb-20260630.htm"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-24",
+        "dataFreshness": "K线、标记价格、资金费率与持仓量使用Binance USDⓈ-M Futures",
+        "category": "unclassified",
+        "conviction": "pending",
+        "valuationLogic": "BTC主要受全球流动性、现货ETF资金流、长期持有者供给、永续合约杠杆与风险偏好共同定价。价格上涨若伴随资金费率和持仓量过热，预期收益会下降。",
+        "thesis": "把现货趋势与永续杠杆分开：趋势向上但资金费率、基差和持仓量不过热，才更接近可持续上涨。",
+        "catalyst": [
+          "现货需求与ETF净流入持续",
+          "价格突破且资金费率保持温和",
+          "持仓量增长由现货成交配合而非单纯杠杆推动"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "价格跌破关键结构且持仓量不降",
+          "资金费率持续过热后价格无法创新高",
+          "现货资金流转负并伴随长期持有者供给上升"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "btc-funding",
+            "label": "永续资金费率",
+            "state": "neutral",
+            "note": "由Binance Futures接口读取并判断杠杆拥挤度。"
+          },
+          {
+            "id": "btc-open-interest",
+            "label": "未平仓合约",
+            "state": "neutral",
+            "note": "由Binance Futures接口读取，需与价格和成交量联动判断。"
+          },
+          {
+            "id": "btc-spot-flow",
+            "label": "现货与ETF资金流",
+            "state": "neutral",
+            "note": "待接入现货ETF和链上供给证据。"
+          }
+        ],
+        "technical": {
+          "trend": "使用BTCUSDT永续日线动态计算",
+          "momentum": "结合标记价格、资金费率与持仓量判断",
+          "structure": "优先识别去杠杆后的价格留存，而非只看单根大阳线。",
+          "levels": [],
+          "action": "资金费率和持仓量过热时降低杠杆；失效点必须按标记价格口径复核。"
+        },
+        "sources": [
+          "Binance USDⓈ-M Futures BTCUSDT永续",
+          "现货ETF资金流",
+          "链上供给数据"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-31",
+        "changeSummary": [
+          "新增：现货价格站上20/50/200日线，暂定第一类。",
+          "新增：RSI约79提示短线过热。",
+          "待核验：Binance永续接口受451限制，资金费率与持仓量没有被伪造。"
+        ],
+        "drivers": [
+          "CoinGecko 365日现货价格",
+          "Binance Futures官方接口可用性检查",
+          "美国现货ETF监管披露通道仍在"
+        ],
+        "verdicts": [
+          {
+            "claim": "必须把现货趋势与永续杠杆分开",
+            "verdict": "confirmed",
+            "explanation": "现货趋势已确认，但永续杠杆证据缺失。"
+          },
+          {
+            "claim": "趋势向上且杠杆不过热",
+            "verdict": "open",
+            "explanation": "资金费率/OI未取得，不能确认后半句。"
+          },
+          {
+            "claim": "突破后风险较低",
+            "verdict": "invalidated",
+            "explanation": "RSI约79，当前并非低风险追涨位置。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "B",
+            "publisher": "i",
+            "publishedAt": "n",
+            "url": "a"
+          },
+          {
+            "title": "B",
+            "publisher": "i",
+            "publishedAt": "n",
+            "url": "a"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eth-perpetual",
+      "symbol": "ETH-USD",
+      "name": "Ethereum 永续",
+      "market": "BINANCE FUTURES",
+      "sector": "加密资产 / ETHUSDT永续",
+      "status": "watching",
+      "category": "type1",
+      "conviction": "low",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "CoinGecko现货日线与Ethereum路线图截至2026-08-31；Binance Futures接口返回HTTP 451，资金费率/OI未取得；人工研究更新于2026-08-31。",
+      "valuationLogic": "ETH按网络活动与费用、L2价值捕获、质押供给、ETF资金流、ETH/BTC和永续杠杆定价。现货站上20/50/200日线且90日涨31.1%，但Glamsterdam仍在开发，价值捕获与杠杆状态需要继续验证。",
+      "thesis": "暂定第一类、低信念：价格趋势强但RSI14约76且距52周高点仍48%。协议升级是催化，不自动等于费用或ETH价值捕获改善。",
+      "catalyst": [
+        "Glamsterdam按路线图推进且网络活动/费用改善",
+        "ETH/BTC相对强度继续上升",
+        "恢复Binance数据后确认资金费率温和、OI不过热"
+      ],
+      "invalidation": [
+        "跌破2245美元20日线并失守2024美元200日线",
+        "网络活动改善但费用/价值继续被L2稀释",
+        "永续杠杆过热且价格无法延续"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "eth-usd-manual-1",
+          "label": "价格趋势",
+          "state": "positive",
+          "note": "CoinGecko现货约2436美元，站上20/50/200日线。"
+        },
+        {
+          "id": "eth-usd-manual-2",
+          "label": "动量",
+          "state": "warning",
+          "note": "近30日涨32.2%、RSI14约76，短线拥挤。"
+        },
+        {
+          "id": "eth-usd-manual-3",
+          "label": "协议",
+          "state": "positive",
+          "note": "Ethereum路线图显示Glamsterdam目标Q4 2026，8月已发布重定价测试提醒。"
+        },
+        {
+          "id": "eth-usd-manual-4",
+          "label": "永续杠杆",
+          "state": "neutral",
+          "note": "Binance接口返回451，资金费率和持仓量未核验。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-31 收于 2,436.14，站上20日线、站上50日线、站上200日线。",
+        "momentum": "近30日 +32.2%，近90日 +31.1%；RSI14 76.0，距52周高点 -48.2%。",
+        "structure": "短中长期均线共振向上。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "2,436.14",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "2,244.96",
+            "role": "support"
+          },
+          {
+            "label": "50日线",
+            "value": "2,029.93",
+            "role": "support"
+          },
+          {
+            "label": "200日线",
+            "value": "2,024.46",
+            "role": "support"
+          }
+        ],
+        "action": "等待2245附近回踩或ETH/BTC/链上费用进一步确认；没有永续数据时只给低信念第一类，跌破2024则退出趋势。"
+      },
+      "sources": [
+        "https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=365&interval=daily",
+        "https://ethereum.org/roadmap/",
+        "https://blog.ethereum.org/2026/08/24/glamsterdam-repricing-testing",
+        "https://developers.binance.com/docs/derivatives"
+      ],
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "keyEvents": [],
+      "previousVersion": {
+        "updatedAt": "2026-07-24",
+        "dataFreshness": "K线、标记价格、资金费率与持仓量使用Binance USDⓈ-M Futures",
+        "category": "unclassified",
+        "conviction": "pending",
+        "valuationLogic": "ETH由网络活动与费用、L2价值捕获、质押供给、ETF资金流、监管预期、ETH/BTC相对强度和永续杠杆共同定价。",
+        "thesis": "不仅看加密大盘方向，还要验证ETH/BTC、网络经济活动和永续仓位是否同步改善。",
+        "catalyst": [
+          "ETH/BTC相对强度转正",
+          "网络费用与稳定币/DeFi活动改善",
+          "现货资金流上升且永续资金费率温和"
+        ],
+        "keyEvents": [],
+        "invalidation": [
+          "ETH/BTC继续破低",
+          "网络活动改善但价值无法沉淀到ETH",
+          "持仓量和资金费率过热而价格滞涨"
+        ],
+        "fundamentalSignals": [
+          {
+            "id": "eth-funding",
+            "label": "永续资金费率",
+            "state": "neutral",
+            "note": "由Binance Futures接口读取并判断多空拥挤。"
+          },
+          {
+            "id": "eth-open-interest",
+            "label": "未平仓合约",
+            "state": "neutral",
+            "note": "由Binance Futures接口读取，需结合标记价格。"
+          },
+          {
+            "id": "eth-network",
+            "label": "网络与资金流",
+            "state": "neutral",
+            "note": "待接入链上活动、质押与ETF资金流。"
+          }
+        ],
+        "technical": {
+          "trend": "使用ETHUSDT永续日线动态计算",
+          "momentum": "结合ETH/BTC、资金费率与持仓量判断",
+          "structure": "相对强度未修复前，不把BTC上涨自动映射为ETH趋势。",
+          "levels": [],
+          "action": "先看ETH/BTC和永续拥挤度；高杠杆环境下缩短失效确认窗口。"
+        },
+        "sources": [
+          "Binance USDⓈ-M Futures ETHUSDT永续",
+          "ETH现货ETF资金流",
+          "链上与质押数据"
+        ]
+      },
+      "lastComparison": {
+        "generatedAt": "2026-08-31T14:30:00+08:00",
+        "evidenceAsOf": "2026-08-31",
+        "changeSummary": [
+          "新增：现货站上20/50/200日线，暂定第一类。",
+          "新增：Glamsterdam进入Q4路线图和测试阶段。",
+          "待核验：ETH/BTC、费用价值捕获与Binance永续杠杆。"
+        ],
+        "drivers": [
+          "CoinGecko 365日现货价格",
+          "Ethereum官方路线图",
+          "Binance Futures接口可用性检查"
+        ],
+        "verdicts": [
+          {
+            "claim": "ETH不能只看加密大盘方向",
+            "verdict": "confirmed",
+            "explanation": "协议与价值捕获仍需独立验证。"
+          },
+          {
+            "claim": "价格与网络经济同步改善",
+            "verdict": "open",
+            "explanation": "价格已改善，费用与价值捕获尚未充分确认。"
+          },
+          {
+            "claim": "永续仓位温和",
+            "verdict": "open",
+            "explanation": "资金费率/OI未取得。"
+          }
+        ],
+        "recentNews": [
+          {
+            "title": "G",
+            "publisher": "l",
+            "publishedAt": "a",
+            "url": "m"
+          },
+          {
+            "title": "E",
+            "publisher": "t",
+            "publishedAt": "h",
+            "url": "e"
+          },
+          {
+            "title": "2",
+            "publisher": "0",
+            "publishedAt": "2",
+            "url": "6"
+          },
+          {
+            "title": "h",
+            "publisher": "t",
+            "publishedAt": "t",
+            "url": "p"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glw",
+      "symbol": "GLW",
+      "name": "Corning",
+      "market": "NYSE",
+      "sector": "光纤光缆 / 特种玻璃 / AI互联",
+      "status": "watching",
+      "category": "type2",
+      "conviction": "medium",
+      "modifiedAt": "2026-08-31T14:30:00+08:00",
+      "updatedAt": "2026-08-31",
+      "dataFreshness": "Corning Q2 2026业绩截至2026-07-28；免费日线截至2026-08-28；人工研究更新于2026-08-31。",
+      "valuationLogic": "Corning按光通信/企业网络增长、显示与材料业务组合、毛利率和自由现金流定价。Q2核心销售47.4亿美元增17%，光通信增32%、企业网络增65%，核心毛利率39.6%，调整后自由现金流14.2亿美元。",
+      "thesis": "AI光连接需求和现金流已验证，但股价低于20/50日线、仅略高于200日线，归第二类。它比纯光模块股盈利质量更稳，但价格仍在去拥挤。",
+      "catalyst": [
+        "Q3核心销售49–50亿美元与EPS 0.85–0.89美元兑现",
+        "企业网络与Gen AI产品继续高于公司整体增速",
+        "股价收复156/171的20/50日线"
+      ],
+      "keyEvents": [
+        {
+          "id": "glw-citi-2026",
+          "date": "2026-09-09",
+          "title": "Citi Global TMT Conference",
+          "kind": "industry",
+          "impact": "medium",
+          "status": "scheduled",
+          "preparation": "关注管理层是否更新光通信需求、毛利率和Q3指引。",
+          "source": "https://investor.corning.com/investor-relations/news-and-events/events-and-presentations/default.aspx"
+        }
+      ],
+      "invalidation": [
+        "光通信增长或核心毛利率明显回落",
+        "自由现金流低于利润增长",
+        "跌破142附近200日线"
+      ],
+      "fundamentalSignals": [
+        {
+          "id": "glw-manual-1",
+          "label": "增长",
+          "state": "positive",
+          "note": "Q2核心销售增17%，光通信增32%，企业网络增65%。"
+        },
+        {
+          "id": "glw-manual-2",
+          "label": "盈利质量",
+          "state": "positive",
+          "note": "核心毛利率39.6%、核心经营利润率20.9%，均同比扩张。"
+        },
+        {
+          "id": "glw-manual-3",
+          "label": "现金流",
+          "state": "positive",
+          "note": "经营现金流17.2亿美元，调整后自由现金流14.2亿美元。"
+        },
+        {
+          "id": "glw-manual-4",
+          "label": "价格",
+          "state": "warning",
+          "note": "148.98低于20/50日线，仅略高于200日线142.20。"
+        }
+      ],
+      "technical": {
+        "trend": "2026-08-28 收于 148.98，跌破20日线、跌破50日线、站上200日线。",
+        "momentum": "近30日 +10.2%，近90日 -22.0%；RSI14 43.9，距52周高点 -45.2%。",
+        "structure": "均线结构混合，处于反弹/修复而非完整趋势确认。",
+        "levels": [
+          {
+            "label": "现价枢轴",
+            "value": "148.98",
+            "role": "pivot"
+          },
+          {
+            "label": "20日线",
+            "value": "156.46",
+            "role": "resistance"
+          },
+          {
+            "label": "50日线",
+            "value": "171.12",
+            "role": "resistance"
+          },
+          {
+            "label": "200日线",
+            "value": "142.20",
+            "role": "support"
+          }
+        ],
+        "action": "142是长期防线，156/171是修复确认带；财报兑现但股价不能收复20日线时保持第二类，不追单月反弹。"
+      },
+      "sources": [
+        "https://investor.corning.com/investor-relations/financials/quarterly-results/default.aspx",
+        "https://finance.yahoo.com/quote/GLW/history/"
+      ]
+    }
+  ],
+  "tombstones": {},
+  "decisions": []
+}

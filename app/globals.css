@@ -1410,6 +1410,57 @@ h3 {
   color: var(--color-accent);
 }
 
+.weekly-screen-status {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-3);
+  align-items: start;
+  margin: 0 0 var(--space-5);
+  padding: var(--space-4);
+  border: var(--rule-thin) solid var(--color-rule);
+  border-left: var(--rule-medium) solid var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.weekly-screen-status > div {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.weekly-screen-status strong {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+}
+
+.weekly-screen-status span,
+.weekly-screen-status small {
+  color: var(--color-ink-soft);
+  font-size: var(--text-2xs);
+  line-height: 1.5;
+}
+
+.weekly-screen-status small {
+  color: var(--color-muted);
+}
+
+.weekly-screen-status button {
+  min-height: 2.25rem;
+  padding: 0 var(--space-3);
+  border: var(--rule-thin) solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper-raised);
+  color: var(--color-accent);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.weekly-screen-status button:disabled {
+  cursor: wait;
+  opacity: 0.58;
+}
+
 .symbol-list {
   border-top: var(--rule-thin) solid var(--color-rule);
 }
@@ -1457,6 +1508,23 @@ h3 {
   color: var(--color-muted);
   font-size: var(--text-2xs);
   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.symbol-row-meta {
+  display: flex;
+  flex: none;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.weekly-streak-badge {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-positive-soft);
+  color: var(--color-positive);
+  font-size: var(--text-2xs);
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
@@ -3889,6 +3957,14 @@ dialog::backdrop {
 }
 
 @media (max-width: 44rem) {
+  .weekly-screen-status {
+    grid-template-columns: 1fr;
+  }
+
+  .weekly-screen-status button {
+    width: fit-content;
+  }
+
   .portfolio-risk-heading dl {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -4462,6 +4538,11 @@ dialog::backdrop {
 }
 
 @media (max-width: 23.5rem) {
+  .symbol-row-meta {
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
   .topbar-actions .button-quiet {
     display: none;
   }

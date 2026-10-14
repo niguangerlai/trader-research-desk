@@ -59,9 +59,11 @@ test("puts invalidated and negative theses ahead of current watch items", () => 
   const current = asset({
     id: "current",
     symbol: "CURR",
+    status: "watching",
     category: "type1",
     updatedAt: "2026-08-12",
     fundamentalSignals: [],
+    lastComparison: undefined,
   });
 
   const queue = buildResearchQueue([current, risky], "2026-08-12");
@@ -69,4 +71,3 @@ test("puts invalidated and negative theses ahead of current watch items", () => 
   assert.equal(queue[0].priority, "urgent");
   assert.equal(queue[1].priority, "current");
 });
-
