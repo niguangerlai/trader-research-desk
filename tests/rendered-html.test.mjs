@@ -141,9 +141,8 @@ test("keeps the local-first research capabilities in source", async () => {
   assert.match(portfolioRisk, /buildPortfolioRisk/);
   assert.match(portfolioRisk, /AI 资本开支链/);
   assert.match(styles, /\.portfolio-risk/);
-  assert.match(page, /连续2周阳线/);
-  assert.match(page, /排除本周未收盘K线/);
-  assert.match(page, /refreshWeeklyScreen/);
+  assert.match(page, /MarketDiscovery/);
+  assert.doesNotMatch(page, /refreshWeeklyScreen/);
   assert.match(weeklyScreen, /evaluateTwoCompletedBullishWeeks/);
   assert.match(weeklyScreen, /isUsListedMarket/);
   assert.match(styles, /\.weekly-screen-status/);

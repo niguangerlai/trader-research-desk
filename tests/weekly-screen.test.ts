@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   aggregateCompletedWeeklyBars,
+  completedWeekStarts,
   evaluateTwoCompletedBullishWeeks,
   isUsListedMarket,
 } from "../app/weekly-screen.ts";
@@ -77,4 +78,20 @@ test("does not match a red week or a gap in the weekly history", () => {
     new Date("2026-10-14T12:00:00Z"),
   );
   assert.equal(gap.reason, "week_gap");
+});
+
+test("switches to this week's closed candle only after Friday New York close", () => {
+  assert.deepEqual(completedWeekStarts(new Date("2026-10-09T19:59:00Z")), ["2026-09-21", "2026-09-28"]);
+  assert.deepEqual(completedWeekStarts(new Date("2026-10-09T20:15:00Z")), ["2026-09-28", "2026-10-05"]);
+  assert.deepEqual(completedWeekStarts(new Date("2026-10-11T08:00:00Z")), ["2026-09-28", "2026-10-05"]);
+  assert.deepEqual(completedWeekStarts(new Date("2026-11-06T21:15:00Z")), ["2026-10-26", "2026-11-02"]);
+});
+
+test("does not turn an old pair of bullish candles into a current signal", () => {
+  const result = evaluateTwoCompletedBullishWeeks(
+    [day("2026-09-21", 100, 104), day("2026-09-28", 104, 108)],
+    new Date("2026-10-14T12:00:00Z"),
+  );
+  assert.equal(result.reason, "stale_data");
+  assert.equal(result.matched, false);
 });

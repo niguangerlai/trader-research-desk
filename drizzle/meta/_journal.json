@@ -8,6 +8,13 @@
       "when": 1785286351232,
       "tag": "0000_dashing_gambit",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791964311770,
+      "tag": "0001_bored_lady_mastermind",
+      "breakpoints": true
     }
   ]
 }

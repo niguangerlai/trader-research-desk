@@ -12,7 +12,7 @@ export type WeeklyCandle = {
 
 export type TwoWeekBullishResult = {
   matched: boolean;
-  reason: "matched" | "not_bullish" | "insufficient_data" | "week_gap";
+  reason: "matched" | "not_bullish" | "insufficient_data" | "week_gap" | "stale_data";
   weeks: WeeklyCandle[];
 };
 
@@ -43,11 +43,32 @@ export function weekStartFor(time: MarketTime) {
   return toIsoDate(date);
 }
 
+export function completedWeekStarts(asOf: Date = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/New_York", year: "numeric", month: "2-digit",
+    day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+  }).formatToParts(asOf);
+  const value = (name: string) => parts.find((part) => part.type === name)?.value ?? "";
+  const date = `${value("year")}-${value("month")}-${value("day")}`;
+  const weekday = new Date(`${date}T12:00:00Z`).getUTCDay();
+  const minuteOfDay = Number(value("hour")) * 60 + Number(value("minute"));
+  const boundary = new Date(`${weekStartFor(date)}T00:00:00Z`);
+  // Wait for the regular Friday close and the delayed public feed, or weekend.
+  if (weekday === 0 || weekday === 6 || (weekday === 5 && minuteOfDay >= 16 * 60 + 15)) {
+    boundary.setUTCDate(boundary.getUTCDate() + 7);
+  }
+  return [14, 7].map((days) => {
+    const week = new Date(boundary);
+    week.setUTCDate(week.getUTCDate() - days);
+    return toIsoDate(week);
+  });
+}
+
 export function aggregateCompletedWeeklyBars(
   bars: MarketBar[],
   asOf: Date = new Date(),
 ) {
-  const currentWeekStart = weekStartFor(asOf.toISOString().slice(0, 10));
+  const lastCompletedWeek = completedWeekStarts(asOf)[1];
   const sorted = [...bars].sort((left, right) =>
     String(left.time).localeCompare(String(right.time)),
   );
@@ -55,8 +76,8 @@ export function aggregateCompletedWeeklyBars(
 
   for (const bar of sorted) {
     const weekStart = weekStartFor(bar.time);
+    if (!weekStart || weekStart > lastCompletedWeek) continue;
     const tradingDay = toIsoDate(toDate(bar.time));
-    if (!weekStart || weekStart >= currentWeekStart) continue;
     if (![bar.open, bar.close].every(Number.isFinite) || bar.open <= 0) continue;
 
     const existing = weeks.get(weekStart);
@@ -101,6 +122,10 @@ export function evaluateTwoCompletedBullishWeeks(
   }
   if (!areAdjacentWeeks(weeks[0].weekStart, weeks[1].weekStart)) {
     return { matched: false, reason: "week_gap", weeks };
+  }
+  const expected = completedWeekStarts(asOf);
+  if (weeks.some((week, index) => week.weekStart !== expected[index])) {
+    return { matched: false, reason: "stale_data", weeks };
   }
   if (!weeks.every((week) => week.bullish)) {
     return { matched: false, reason: "not_bullish", weeks };
